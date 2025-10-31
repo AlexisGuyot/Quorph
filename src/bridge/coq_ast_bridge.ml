@@ -62,11 +62,11 @@ let rec to_ir (e : expr) : Ir.expr =
 (* Pipeline / requêtes                                                    *)
 (* ====================================================================== *)
 
-type ctx = { env : env; row : Ty.ty; tenv : (string * Ty.ty) list }
+type ctx = { env : Bridge_util.env; row : Ty.ty; tenv : (string * Ty.ty) list }
 
 let ctx_with_row ctx row = { ctx with row; tenv = set_row_ty ctx.tenv row }
 
-let of_query_env (env : env) (q : Ast_surface.query) : Ir.expr =
+let of_query_env (env : Bridge_util.env) (q : Ast_surface.query) : Ir.expr =
   let row = find_src env.catalog q.from in
   let ctx0 = { env; row; tenv = set_row_ty [] row } in
   let c0  = escan q.from in
