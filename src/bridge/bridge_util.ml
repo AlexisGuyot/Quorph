@@ -85,6 +85,13 @@ let lookup_field (ty : Ty.ty) (fname : string) : Ty.ty option =
   | _ -> None
 
 (* ====================================================================== *)
+(* 3bis) Environnement bridge                                              *)
+(* ====================================================================== *)
+
+(* Expose un type d'environnement minimal pour le bridge. *)
+type env = { catalog : (CoqString.string * Ty.ty) list }
+
+(* ====================================================================== *)
 (* 4) Helpers numériques (BinNums)                                        *)
 (* ====================================================================== *)
 
