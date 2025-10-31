@@ -1,0 +1,182 @@
+DIGEST 2d60a49962fe9974005c4a2eaea345f5
+FQuorph.Impl.Term
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R51:63 Coq.Lists.List ListNotations <> mod
+R144:148 Quorph.Impl.Types <> <> lib
+mod 159:162 <> Term
+R172:176 Quorph.Impl.Types Types <> mod
+ind 190:193 Term expr
+constr 207:210 Term EVar
+constr 227:236 Term EConstUnit
+constr 240:249 Term EConstBool
+constr 262:270 Term EConstInt
+constr 281:292 Term EConstString
+constr 307:313 Term ERecord
+constr 343:347 Term EProj
+constr 373:376 Term EFst
+constr 395:398 Term ESnd
+constr 417:421 Term EPair
+constr 440:443 Term EInl
+constr 459:462 Term EInr
+constr 475:479 Term ESome
+constr 494:498 Term ENone
+constr 502:505 Term ELam
+constr 547:550 Term EApp
+constr 568:572 Term EScan
+constr 589:592 Term EMap
+constr 617:622 Term EWhere
+constr 645:652 Term EFlatten
+constr 665:672 Term EProject
+constr 706:710 Term EJoin
+constr 742:751 Term ESemiJoinL
+constr 781:790 Term EAntiJoinL
+constr 820:829 Term ESemiJoinR
+constr 859:868 Term EAntiJoinR
+constr 898:907 Term ELeftOuter
+constr 938:948 Term ERightOuter
+constr 978:987 Term EFullOuter
+constr 1018:1026 Term EUnionAll
+constr 1041:1046 Term EUnion
+constr 1064:1072 Term EDistinct
+constr 1085:1092 Term EGroupBy
+constr 1114:1123 Term EAggregate
+constr 1149:1155 Term EHaving
+constr 1179:1184 Term EOrder
+constr 1206:1211 Term ELimit
+constr 1233:1238 Term ECount
+R217:222 Coq.Strings.String <> string ind
+binder 215:215 <> x:3
+R254:257 Coq.Init.Datatypes <> bool ind
+binder 252:252 <> b:4
+R276:276 Coq.Numbers.BinNums <> Z ind
+binder 274:274 <> n:5
+R297:302 Coq.Strings.String <> string ind
+binder 295:295 <> s:6
+R319:322 Coq.Init.Datatypes <> list ind
+R331:333 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R325:330 Coq.Strings.String <> string ind
+R334:337 Quorph.Impl.Term <> expr:1 ind
+binder 316:317 <> fs:7
+R354:357 Quorph.Impl.Term <> expr:1 ind
+binder 352:352 <> e:8
+R363:368 Coq.Strings.String <> string ind
+binder 361:361 <> a:9
+R384:387 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R380:383 Quorph.Impl.Term <> expr:1 ind
+R388:391 Quorph.Impl.Term <> expr:1 ind
+R406:409 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R402:405 Quorph.Impl.Term <> expr:1 ind
+R410:413 Quorph.Impl.Term <> expr:1 ind
+R432:435 Quorph.Impl.Term <> expr:1 ind
+binder 426:427 <> e1:10
+binder 429:430 <> e2:11
+R451:454 Quorph.Impl.Term <> expr:1 ind
+binder 449:449 <> e:12
+R467:470 Quorph.Impl.Term <> expr:1 ind
+binder 465:465 <> e:13
+R486:489 Quorph.Impl.Term <> expr:1 ind
+binder 484:484 <> e:14
+R513:518 Coq.Strings.String <> string ind
+binder 511:511 <> x:15
+R529:530 Quorph.Impl.Types Types ty ind
+binder 522:527 <> arg_ty:16
+R539:542 Quorph.Impl.Term <> expr:1 ind
+binder 534:537 <> body:17
+R560:563 Quorph.Impl.Term <> expr:1 ind
+binder 556:556 <> f:18
+binder 558:558 <> e:19
+R579:584 Coq.Strings.String <> string ind
+binder 577:577 <> R:20
+R600:603 Quorph.Impl.Term <> expr:1 ind
+binder 598:598 <> f:21
+R609:612 Quorph.Impl.Term <> expr:1 ind
+binder 607:607 <> c:22
+R628:631 Quorph.Impl.Term <> expr:1 ind
+binder 626:626 <> p:23
+R637:640 Quorph.Impl.Term <> expr:1 ind
+binder 635:635 <> c:24
+R657:660 Quorph.Impl.Term <> expr:1 ind
+binder 655:655 <> c:25
+R682:685 Coq.Init.Datatypes <> list ind
+R687:692 Coq.Strings.String <> string ind
+binder 675:680 <> fields:26
+R698:701 Quorph.Impl.Term <> expr:1 ind
+binder 696:696 <> c:27
+R721:724 Quorph.Impl.Term <> expr:1 ind
+binder 715:719 <> theta:28
+R734:737 Quorph.Impl.Term <> expr:1 ind
+binder 728:729 <> c1:29
+binder 731:732 <> c2:30
+R760:763 Quorph.Impl.Term <> expr:1 ind
+binder 754:758 <> theta:31
+R773:776 Quorph.Impl.Term <> expr:1 ind
+binder 767:768 <> c1:32
+binder 770:771 <> c2:33
+R799:802 Quorph.Impl.Term <> expr:1 ind
+binder 793:797 <> theta:34
+R812:815 Quorph.Impl.Term <> expr:1 ind
+binder 806:807 <> c1:35
+binder 809:810 <> c2:36
+R838:841 Quorph.Impl.Term <> expr:1 ind
+binder 832:836 <> theta:37
+R851:854 Quorph.Impl.Term <> expr:1 ind
+binder 845:846 <> c1:38
+binder 848:849 <> c2:39
+R877:880 Quorph.Impl.Term <> expr:1 ind
+binder 871:875 <> theta:40
+R890:893 Quorph.Impl.Term <> expr:1 ind
+binder 884:885 <> c1:41
+binder 887:888 <> c2:42
+R917:920 Quorph.Impl.Term <> expr:1 ind
+binder 911:915 <> theta:43
+R930:933 Quorph.Impl.Term <> expr:1 ind
+binder 924:925 <> c1:44
+binder 927:928 <> c2:45
+R957:960 Quorph.Impl.Term <> expr:1 ind
+binder 951:955 <> theta:46
+R970:973 Quorph.Impl.Term <> expr:1 ind
+binder 964:965 <> c1:47
+binder 967:968 <> c2:48
+R997:1000 Quorph.Impl.Term <> expr:1 ind
+binder 991:995 <> theta:49
+R1010:1013 Quorph.Impl.Term <> expr:1 ind
+binder 1004:1005 <> c1:50
+binder 1007:1008 <> c2:51
+R1033:1036 Quorph.Impl.Term <> expr:1 ind
+binder 1029:1029 <> u:52
+binder 1031:1031 <> v:53
+R1056:1059 Quorph.Impl.Term <> expr:1 ind
+binder 1052:1052 <> u:54
+binder 1054:1054 <> v:55
+R1077:1080 Quorph.Impl.Term <> expr:1 ind
+binder 1075:1075 <> c:56
+R1097:1100 Quorph.Impl.Term <> expr:1 ind
+binder 1095:1095 <> k:57
+R1106:1109 Quorph.Impl.Term <> expr:1 ind
+binder 1104:1104 <> c:58
+R1130:1135 Coq.Strings.String <> string ind
+binder 1126:1128 <> agg:59
+R1141:1144 Quorph.Impl.Term <> expr:1 ind
+binder 1139:1139 <> c:60
+R1162:1165 Quorph.Impl.Term <> expr:1 ind
+binder 1158:1160 <> psi:61
+R1171:1174 Quorph.Impl.Term <> expr:1 ind
+binder 1169:1169 <> g:62
+R1189:1192 Quorph.Impl.Term <> expr:1 ind
+binder 1187:1187 <> k:63
+R1198:1201 Quorph.Impl.Term <> expr:1 ind
+binder 1196:1196 <> c:64
+R1216:1219 Quorph.Impl.Term <> expr:1 ind
+binder 1214:1214 <> n:65
+R1225:1228 Quorph.Impl.Term <> expr:1 ind
+binder 1223:1223 <> c:66
+R1247:1250 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1243:1246 Quorph.Impl.Term <> expr:1 ind
+R1251:1254 Quorph.Impl.Term <> expr:1 ind
+scheme 190:193 Term expr_rect
+scheme 190:193 Term expr_ind
+scheme 190:193 Term expr_rec
+scheme 190:193 Term expr_sind
+R1262:1265 Quorph.Impl.Term Term <> mod

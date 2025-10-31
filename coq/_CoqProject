@@ -1,0 +1,20 @@
+-R impl Quorph.Impl
+-R algo Quorph.Algo
+-R extract Quorph.Extract
+-R proofs Quorph.Proofs
+
+impl/Types.v
+impl/Keys.v
+impl/Context.v
+impl/Term.v
+impl/Typing.v
+impl/SemanticsSig.v
+impl/SemanticsList.v
+
+algo/AlgoTyping.v
+
+extract/Extract.v
+
+proofs/TypingProps.v
+proofs/Functoriality.v
+proofs/Soundness.v

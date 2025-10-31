@@ -1,0 +1,191 @@
+DIGEST 8e86275ce1ac7a22493ec8335ea98f2f
+FQuorph.Impl.SemanticsSig
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R51:63 Coq.Lists.List ListNotations <> mod
+R144:148 Quorph.Impl.Types <> <> lib
+mod 158:169 <> SemanticsSig
+R179:183 Quorph.Impl.Types Types <> mod
+ax 197:197 SemanticsSig J
+R203:206 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R201:202 Quorph.Impl.Types Types ty ind
+ax 224:224 SemanticsSig T
+R233:236 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R228:232 Quorph.Impl.Types Types kappa ind
+R241:244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 262:264 SemanticsSig ret
+binder 276:276 <> k:3
+binder 278:278 <> A:4
+R283:286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R282:282 Quorph.Impl.SemanticsSig <> A:4 var
+R287:287 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R289:289 Quorph.Impl.SemanticsSig <> k:3 var
+R291:291 Quorph.Impl.SemanticsSig <> A:4 var
+ax 304:307 SemanticsSig bind
+binder 319:319 <> k:6
+binder 321:321 <> A:7
+binder 323:323 <> B:8
+R332:335 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R327:327 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R329:329 Quorph.Impl.SemanticsSig <> k:6 var
+R331:331 Quorph.Impl.SemanticsSig <> A:7 var
+R336:336 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R347:351 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R338:341 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R337:337 Quorph.Impl.SemanticsSig <> A:7 var
+R342:342 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R344:344 Quorph.Impl.SemanticsSig <> k:6 var
+R346:346 Quorph.Impl.SemanticsSig <> B:8 var
+R352:352 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R354:354 Quorph.Impl.SemanticsSig <> k:6 var
+R356:356 Quorph.Impl.SemanticsSig <> B:8 var
+ax 370:373 SemanticsSig tmap
+binder 385:385 <> k:10
+binder 387:387 <> A:11
+binder 389:389 <> B:12
+R393:393 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R400:404 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R395:398 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R394:394 Quorph.Impl.SemanticsSig <> A:11 var
+R399:399 Quorph.Impl.SemanticsSig <> B:12 var
+R410:413 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R405:405 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R407:407 Quorph.Impl.SemanticsSig <> k:10 var
+R409:409 Quorph.Impl.SemanticsSig <> A:11 var
+R414:414 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R416:416 Quorph.Impl.SemanticsSig <> k:10 var
+R418:418 Quorph.Impl.SemanticsSig <> B:12 var
+ax 431:437 SemanticsSig tconcat
+binder 449:449 <> k:14
+binder 451:451 <> A:15
+R466:469 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R455:455 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R457:457 Quorph.Impl.SemanticsSig <> k:14 var
+R460:460 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R462:462 Quorph.Impl.SemanticsSig <> k:14 var
+R464:464 Quorph.Impl.SemanticsSig <> A:15 var
+R470:470 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R472:472 Quorph.Impl.SemanticsSig <> k:14 var
+R474:474 Quorph.Impl.SemanticsSig <> A:15 var
+ax 484:492 SemanticsSig tmap_bind
+binder 503:503 <> k:17
+binder 505:505 <> A:18
+binder 507:507 <> B:19
+R513:514 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R512:512 Quorph.Impl.SemanticsSig <> A:18 var
+R515:515 Quorph.Impl.SemanticsSig <> B:19 var
+binder 510:510 <> f:20
+R522:522 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R524:524 Quorph.Impl.SemanticsSig <> k:17 var
+R526:526 Quorph.Impl.SemanticsSig <> A:18 var
+binder 519:520 <> ma:21
+R533:534 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R532:532 Quorph.Impl.SemanticsSig <> B:19 var
+R535:535 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R537:537 Quorph.Impl.SemanticsSig <> k:17 var
+R539:539 Quorph.Impl.SemanticsSig <> A:18 var
+binder 530:530 <> g:22
+R563:565 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R545:548 Quorph.Impl.SemanticsSig SemanticsSig bind defax
+R562:562 Quorph.Impl.SemanticsSig <> g:22 var
+R551:554 Quorph.Impl.SemanticsSig SemanticsSig tmap defax
+R558:559 Quorph.Impl.SemanticsSig <> ma:21 var
+R556:556 Quorph.Impl.SemanticsSig <> f:20 var
+R566:569 Quorph.Impl.SemanticsSig SemanticsSig bind defax
+binder 579:579 <> a:23
+R584:584 Quorph.Impl.SemanticsSig <> g:22 var
+R587:587 Quorph.Impl.SemanticsSig <> f:20 var
+R589:589 Quorph.Impl.SemanticsSig <> a:23 var
+R571:572 Quorph.Impl.SemanticsSig <> ma:21 var
+def 606:612 SemanticsSig JOption
+binder 615:615 <> A:25
+R626:631 Coq.Init.Datatypes <> option ind
+R633:633 Quorph.Impl.SemanticsSig <> A:25 var
+ax 647:651 SemanticsSig JUnit
+R662:664 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R655:655 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R657:661 Quorph.Impl.Types Types TUnit constr
+R665:668 Coq.Init.Datatypes <> unit ind
+ax 681:685 SemanticsSig JBool
+R696:698 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R689:689 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R691:695 Quorph.Impl.Types Types TBool constr
+R699:702 Coq.Init.Datatypes <> bool ind
+ax 715:718 SemanticsSig JInt
+R729:732 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R723:723 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R725:728 Quorph.Impl.Types Types TInt constr
+R733:733 Coq.Numbers.BinNums <> Z ind
+ax 746:752 SemanticsSig JString
+R765:767 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R756:756 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R758:764 Quorph.Impl.Types Types TString constr
+R768:773 Coq.Strings.String <> string ind
+ax 787:791 SemanticsSig JProd
+binder 802:802 <> a:30
+binder 804:804 <> b:31
+R820:822 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R807:807 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R810:814 Quorph.Impl.Types Types TProd constr
+R816:816 Quorph.Impl.SemanticsSig <> a:30 var
+R818:818 Quorph.Impl.SemanticsSig <> b:31 var
+R827:829 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R824:824 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R826:826 Quorph.Impl.SemanticsSig <> a:30 var
+R830:830 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R832:832 Quorph.Impl.SemanticsSig <> b:31 var
+ax 851:854 SemanticsSig JSum
+binder 866:866 <> a:33
+binder 868:868 <> b:34
+R883:885 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R871:871 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R874:877 Quorph.Impl.Types Types TSum constr
+R879:879 Quorph.Impl.SemanticsSig <> a:33 var
+R881:881 Quorph.Impl.SemanticsSig <> b:34 var
+R886:888 Coq.Init.Datatypes <> sum ind
+R897:897 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R899:899 Quorph.Impl.SemanticsSig <> b:34 var
+R891:891 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R893:893 Quorph.Impl.SemanticsSig <> a:33 var
+ax 913:921 SemanticsSig JOption_t
+binder 932:932 <> a:36
+R948:950 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R935:935 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R938:944 Quorph.Impl.Types Types TOption constr
+R946:946 Quorph.Impl.SemanticsSig <> a:36 var
+R951:956 Coq.Init.Datatypes <> option ind
+R959:959 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R961:961 Quorph.Impl.SemanticsSig <> a:36 var
+ax 975:980 SemanticsSig JArrow
+binder 991:991 <> a:38
+binder 993:993 <> b:39
+R1010:1013 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1024:1024 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R996:996 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R999:1004 Quorph.Impl.Types Types TArrow constr
+R1006:1006 Quorph.Impl.SemanticsSig <> a:38 var
+R1008:1008 Quorph.Impl.SemanticsSig <> b:39 var
+R1017:1020 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1014:1014 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R1016:1016 Quorph.Impl.SemanticsSig <> a:38 var
+R1021:1021 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R1023:1023 Quorph.Impl.SemanticsSig <> b:39 var
+ax 1037:1041 SemanticsSig JColl
+binder 1054:1054 <> k:41
+binder 1056:1056 <> a:42
+R1072:1074 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1059:1059 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R1062:1066 Quorph.Impl.Types Types TColl constr
+R1068:1068 Quorph.Impl.SemanticsSig <> k:41 var
+R1070:1070 Quorph.Impl.SemanticsSig <> a:42 var
+R1075:1075 Quorph.Impl.SemanticsSig SemanticsSig T defax
+R1077:1077 Quorph.Impl.SemanticsSig <> k:41 var
+R1080:1080 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R1082:1082 Quorph.Impl.SemanticsSig <> a:42 var
+ax 1097:1103 SemanticsSig JRecord
+binder 1114:1115 <> fs:44
+R1118:1118 Quorph.Impl.SemanticsSig SemanticsSig J defax
+R1121:1127 Quorph.Impl.Types Types TRecord constr
+R1129:1130 Quorph.Impl.SemanticsSig <> fs:44 var
+R1146:1157 Quorph.Impl.SemanticsSig SemanticsSig <> mod

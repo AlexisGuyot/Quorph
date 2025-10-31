@@ -1,0 +1,1032 @@
+DIGEST 32c9f6842c29069e5773d766dc7d8506
+FQuorph.Impl.Typing
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R43:46 Coq.Bool.Bool <> <> lib
+R56:68 Coq.Lists.List ListNotations <> mod
+R149:153 Quorph.Impl.Types <> <> lib
+R155:158 Quorph.Impl.Term <> <> lib
+mod 168:173 <> Typing
+R183:187 Quorph.Impl.Types Types <> mod
+R189:192 Quorph.Impl.Term Term <> mod
+def 207:209 Typing env
+R214:217 Coq.Init.Datatypes <> list ind
+R226:228 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R220:225 Coq.Strings.String <> string ind
+R229:230 Quorph.Impl.Types Types ty ind
+def 244:249 Typing lookup
+R254:259 Coq.Strings.String <> string ind
+binder 252:252 <> x:1
+R266:268 Quorph.Impl.Typing Typing env def
+binder 263:264 <> Γ:2
+R273:278 Coq.Init.Datatypes <> option ind
+R280:281 Quorph.Impl.Types Types ty ind
+R294:295 Quorph.Impl.Typing <> Γ:2 var
+R306:307 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R312:315 Coq.Init.Datatypes <> None constr
+R326:327 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R321:321 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R323:323 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R325:325 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R338:347 Coq.Strings.String <> eqb def
+R349:349 Quorph.Impl.Typing <> x:1 var
+R370:375 Quorph.Impl.Typing <> lookup:3 def
+R377:377 Quorph.Impl.Typing <> x:1 var
+R358:361 Coq.Init.Datatypes <> Some constr
+def 400:408 Typing in_fields
+R413:418 Coq.Strings.String <> string ind
+binder 411:411 <> a:5
+R424:427 Coq.Init.Datatypes <> list ind
+R436:436 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R430:435 Coq.Strings.String <> string ind
+R437:438 Quorph.Impl.Types Types ty ind
+binder 422:422 <> I:6
+R444:447 Coq.Init.Datatypes <> bool ind
+R460:460 Quorph.Impl.Typing <> I:6 var
+R471:472 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R477:481 Coq.Init.Datatypes <> false constr
+R492:493 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R487:487 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R489:489 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R491:491 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R503:512 Coq.Strings.String <> eqb def
+R514:514 Quorph.Impl.Typing <> a:5 var
+R533:541 Quorph.Impl.Typing <> in_fields:7 def
+R543:543 Quorph.Impl.Typing <> a:5 var
+R523:526 Coq.Init.Datatypes <> true constr
+ind 566:573 Typing has_type
+constr 613:617 Typing T_Var
+constr 684:689 Typing T_Unit
+constr 727:732 Typing T_Bool
+constr 776:780 Typing T_Int
+constr 822:829 Typing T_String
+constr 877:884 Typing T_Record
+constr 1016:1021 Typing T_Proj
+constr 1117:1122 Typing T_Pair
+constr 1229:1233 Typing T_Inl
+constr 1308:1312 Typing T_Inr
+constr 1387:1391 Typing T_Fst
+constr 1479:1483 Typing T_Snd
+constr 1571:1576 Typing T_Some
+constr 1649:1654 Typing T_None
+constr 1701:1705 Typing T_Lam
+constr 1808:1812 Typing T_App
+constr 1913:1918 Typing T_Scan
+constr 1976:1980 Typing T_Map
+constr 2106:2112 Typing T_Where
+constr 2240:2248 Typing T_Flatten
+constr 2350:2358 Typing T_Project
+constr 2600:2605 Typing T_Join
+constr 2809:2815 Typing T_SemiL
+constr 3013:3019 Typing T_AntiL
+constr 3217:3223 Typing T_SemiR
+constr 3421:3427 Typing T_AntiR
+constr 3625:3635 Typing T_LeftOuter
+constr 3854:3865 Typing T_RightOuter
+constr 4085:4095 Typing T_FullOuter
+constr 4324:4333 Typing T_UnionAll
+constr 4464:4470 Typing T_Union
+constr 4600:4609 Typing T_Distinct
+constr 4702:4710 Typing T_GroupBy
+constr 4863:4873 Typing T_Aggregate
+constr 4998:5005 Typing T_Having
+constr 5176:5182 Typing T_Order
+constr 5322:5328 Typing T_Limit
+constr 5447:5453 Typing T_Count
+R580:583 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R577:579 Quorph.Impl.Typing Typing env def
+R593:596 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R584:592 Quorph.Impl.Term Term expr ind
+R599:602 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R597:598 Quorph.Impl.Types Types ty ind
+binder 619:620 <> Γ:11
+binder 622:622 <> x:12
+binder 624:625 <> τ:13
+R654:657 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R644:646 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R633:638 Quorph.Impl.Typing Typing lookup def
+R640:640 Quorph.Impl.Typing <> x:12 var
+R642:643 Quorph.Impl.Typing <> Γ:11 var
+R647:650 Coq.Init.Datatypes <> Some constr
+R652:653 Quorph.Impl.Typing <> τ:13 var
+R658:665 Quorph.Impl.Typing <> has_type:9 ind
+R679:680 Quorph.Impl.Typing <> τ:13 var
+R671:674 Quorph.Impl.Term Term EVar constr
+R676:676 Quorph.Impl.Typing <> x:12 var
+R667:668 Quorph.Impl.Typing <> Γ:11 var
+binder 691:692 <> Γ:14
+R696:703 Quorph.Impl.Typing <> has_type:9 ind
+R719:723 Quorph.Impl.Types Types TUnit constr
+R708:717 Quorph.Impl.Term Term EConstUnit constr
+R705:706 Quorph.Impl.Typing <> Γ:14 var
+binder 734:735 <> Γ:15
+binder 737:737 <> b:16
+R741:748 Quorph.Impl.Typing <> has_type:9 ind
+R768:772 Quorph.Impl.Types Types TBool constr
+R754:763 Quorph.Impl.Term Term EConstBool constr
+R765:765 Quorph.Impl.Typing <> b:16 var
+R750:751 Quorph.Impl.Typing <> Γ:15 var
+binder 782:783 <> Γ:17
+binder 785:785 <> n:18
+R789:796 Quorph.Impl.Typing <> has_type:9 ind
+R815:818 Quorph.Impl.Types Types TInt constr
+R802:810 Quorph.Impl.Term Term EConstInt constr
+R812:812 Quorph.Impl.Typing <> n:18 var
+R798:799 Quorph.Impl.Typing <> Γ:17 var
+binder 831:832 <> Γ:19
+binder 834:834 <> s:20
+R838:845 Quorph.Impl.Typing <> has_type:9 ind
+R867:873 Quorph.Impl.Types Types TString constr
+R851:862 Quorph.Impl.Term Term EConstString constr
+R864:864 Quorph.Impl.Typing <> s:20 var
+R847:848 Quorph.Impl.Typing <> Γ:19 var
+binder 886:887 <> Γ:21
+binder 889:890 <> fs:22
+binder 892:894 <> τs:23
+R902:902 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R966:974 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 910:910 <> a:24
+binder 912:912 <> e:25
+binder 914:915 <> τ:26
+R929:932 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R918:919 Coq.Lists.List <> In def
+R927:928 Quorph.Impl.Typing <> fs:22 var
+R921:921 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R923:923 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R925:925 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R922:922 Quorph.Impl.Typing <> a:24 var
+R924:924 Quorph.Impl.Typing <> e:25 var
+R946:949 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R933:934 Coq.Lists.List <> In def
+R943:945 Quorph.Impl.Typing <> τs:23 var
+R936:936 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R938:938 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R941:941 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R937:937 Quorph.Impl.Typing <> a:24 var
+R939:940 Quorph.Impl.Typing <> τ:26 var
+R950:957 Quorph.Impl.Typing <> has_type:9 ind
+R964:965 Quorph.Impl.Typing <> τ:26 var
+R962:962 Quorph.Impl.Typing <> e:25 var
+R959:960 Quorph.Impl.Typing <> Γ:21 var
+R975:982 Quorph.Impl.Typing <> has_type:9 ind
+R1001:1007 Quorph.Impl.Types Types TRecord constr
+R1009:1011 Quorph.Impl.Typing <> τs:23 var
+R988:994 Quorph.Impl.Term Term ERecord constr
+R996:997 Quorph.Impl.Typing <> fs:22 var
+R984:985 Quorph.Impl.Typing <> Γ:21 var
+binder 1023:1024 <> Γ:27
+binder 1026:1026 <> e:28
+binder 1028:1028 <> a:29
+binder 1030:1031 <> fs:30
+binder 1033:1034 <> τ:31
+R1068:1071 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1042:1049 Quorph.Impl.Typing <> has_type:9 ind
+R1057:1063 Quorph.Impl.Types Types TRecord constr
+R1065:1066 Quorph.Impl.Typing <> fs:30 var
+R1054:1054 Quorph.Impl.Typing <> e:28 var
+R1051:1052 Quorph.Impl.Typing <> Γ:27 var
+R1084:1087 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1072:1073 Coq.Lists.List <> In def
+R1082:1083 Quorph.Impl.Typing <> fs:30 var
+R1075:1075 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1077:1077 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1080:1080 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1076:1076 Quorph.Impl.Typing <> a:29 var
+R1078:1079 Quorph.Impl.Typing <> τ:31 var
+R1088:1095 Quorph.Impl.Typing <> has_type:9 ind
+R1112:1113 Quorph.Impl.Typing <> τ:31 var
+R1101:1105 Quorph.Impl.Term Term EProj constr
+R1107:1107 Quorph.Impl.Typing <> e:28 var
+R1109:1109 Quorph.Impl.Typing <> a:29 var
+R1097:1098 Quorph.Impl.Typing <> Γ:27 var
+binder 1124:1125 <> Γ:32
+binder 1127:1128 <> e1:33
+binder 1130:1131 <> e2:34
+binder 1133:1134 <> τ:35
+binder 1136:1137 <> σ:36
+R1162:1165 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1145:1152 Quorph.Impl.Typing <> has_type:9 ind
+R1160:1161 Quorph.Impl.Typing <> τ:35 var
+R1157:1158 Quorph.Impl.Typing <> e1:33 var
+R1154:1155 Quorph.Impl.Typing <> Γ:32 var
+R1183:1186 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1166:1173 Quorph.Impl.Typing <> has_type:9 ind
+R1181:1182 Quorph.Impl.Typing <> σ:36 var
+R1178:1179 Quorph.Impl.Typing <> e2:34 var
+R1175:1176 Quorph.Impl.Typing <> Γ:32 var
+R1187:1194 Quorph.Impl.Typing <> has_type:9 ind
+R1214:1218 Quorph.Impl.Types Types TProd constr
+R1220:1221 Quorph.Impl.Typing <> τ:35 var
+R1223:1224 Quorph.Impl.Typing <> σ:36 var
+R1200:1204 Quorph.Impl.Term Term EPair constr
+R1206:1207 Quorph.Impl.Typing <> e1:33 var
+R1209:1210 Quorph.Impl.Typing <> e2:34 var
+R1196:1197 Quorph.Impl.Typing <> Γ:32 var
+binder 1235:1236 <> Γ:37
+binder 1238:1238 <> e:38
+binder 1240:1241 <> τ:39
+binder 1243:1244 <> σ:40
+R1268:1271 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1252:1259 Quorph.Impl.Typing <> has_type:9 ind
+R1266:1267 Quorph.Impl.Typing <> τ:39 var
+R1264:1264 Quorph.Impl.Typing <> e:38 var
+R1261:1262 Quorph.Impl.Typing <> Γ:37 var
+R1272:1279 Quorph.Impl.Typing <> has_type:9 ind
+R1294:1297 Quorph.Impl.Types Types TSum constr
+R1299:1300 Quorph.Impl.Typing <> τ:39 var
+R1302:1303 Quorph.Impl.Typing <> σ:40 var
+R1285:1288 Quorph.Impl.Term Term EInl constr
+R1290:1290 Quorph.Impl.Typing <> e:38 var
+R1281:1282 Quorph.Impl.Typing <> Γ:37 var
+binder 1314:1315 <> Γ:41
+binder 1317:1317 <> e:42
+binder 1319:1320 <> τ:43
+binder 1322:1323 <> σ:44
+R1347:1350 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1331:1338 Quorph.Impl.Typing <> has_type:9 ind
+R1345:1346 Quorph.Impl.Typing <> σ:44 var
+R1343:1343 Quorph.Impl.Typing <> e:42 var
+R1340:1341 Quorph.Impl.Typing <> Γ:41 var
+R1351:1358 Quorph.Impl.Typing <> has_type:9 ind
+R1373:1376 Quorph.Impl.Types Types TSum constr
+R1378:1379 Quorph.Impl.Typing <> τ:43 var
+R1381:1382 Quorph.Impl.Typing <> σ:44 var
+R1364:1367 Quorph.Impl.Term Term EInr constr
+R1369:1369 Quorph.Impl.Typing <> e:42 var
+R1360:1361 Quorph.Impl.Typing <> Γ:41 var
+binder 1402:1403 <> Γ:45
+binder 1405:1405 <> e:46
+binder 1407:1408 <> τ:47
+binder 1410:1411 <> σ:48
+R1445:1452 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1418:1425 Quorph.Impl.Typing <> has_type:9 ind
+R1433:1437 Quorph.Impl.Types Types TProd constr
+R1439:1440 Quorph.Impl.Typing <> τ:47 var
+R1442:1443 Quorph.Impl.Typing <> σ:48 var
+R1430:1430 Quorph.Impl.Typing <> e:46 var
+R1427:1428 Quorph.Impl.Typing <> Γ:45 var
+R1453:1460 Quorph.Impl.Typing <> has_type:9 ind
+R1474:1475 Quorph.Impl.Typing <> τ:47 var
+R1466:1469 Quorph.Impl.Term Term EFst constr
+R1471:1471 Quorph.Impl.Typing <> e:46 var
+R1462:1463 Quorph.Impl.Typing <> Γ:45 var
+binder 1494:1495 <> Γ:49
+binder 1497:1497 <> e:50
+binder 1499:1500 <> τ:51
+binder 1502:1503 <> σ:52
+R1537:1544 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1510:1517 Quorph.Impl.Typing <> has_type:9 ind
+R1525:1529 Quorph.Impl.Types Types TProd constr
+R1531:1532 Quorph.Impl.Typing <> τ:51 var
+R1534:1535 Quorph.Impl.Typing <> σ:52 var
+R1522:1522 Quorph.Impl.Typing <> e:50 var
+R1519:1520 Quorph.Impl.Typing <> Γ:49 var
+R1545:1552 Quorph.Impl.Typing <> has_type:9 ind
+R1566:1567 Quorph.Impl.Typing <> σ:52 var
+R1558:1561 Quorph.Impl.Term Term ESnd constr
+R1563:1563 Quorph.Impl.Typing <> e:50 var
+R1554:1555 Quorph.Impl.Typing <> Γ:49 var
+binder 1578:1579 <> Γ:53
+binder 1581:1581 <> e:54
+binder 1583:1584 <> τ:55
+R1608:1611 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1592:1599 Quorph.Impl.Typing <> has_type:9 ind
+R1606:1607 Quorph.Impl.Typing <> τ:55 var
+R1604:1604 Quorph.Impl.Typing <> e:54 var
+R1601:1602 Quorph.Impl.Typing <> Γ:53 var
+R1612:1619 Quorph.Impl.Typing <> has_type:9 ind
+R1635:1641 Quorph.Impl.Types Types TOption constr
+R1643:1644 Quorph.Impl.Typing <> τ:55 var
+R1625:1629 Quorph.Impl.Term Term ESome constr
+R1631:1631 Quorph.Impl.Typing <> e:54 var
+R1621:1622 Quorph.Impl.Typing <> Γ:53 var
+binder 1656:1657 <> Γ:56
+binder 1659:1660 <> τ:57
+R1668:1675 Quorph.Impl.Typing <> has_type:9 ind
+R1687:1693 Quorph.Impl.Types Types TOption constr
+R1695:1696 Quorph.Impl.Typing <> τ:57 var
+R1680:1684 Quorph.Impl.Term Term ENone constr
+R1677:1678 Quorph.Impl.Typing <> Γ:56 var
+binder 1707:1708 <> Γ:58
+binder 1710:1710 <> x:59
+binder 1712:1713 <> τ:60
+binder 1715:1716 <> σ:61
+binder 1718:1721 <> body:62
+R1758:1761 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1729:1736 Quorph.Impl.Typing <> has_type:9 ind
+R1756:1757 Quorph.Impl.Typing <> σ:61 var
+R1751:1754 Quorph.Impl.Typing <> body:62 var
+R1745:1746 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1739:1739 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1741:1741 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1744:1744 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1740:1740 Quorph.Impl.Typing <> x:59 var
+R1742:1743 Quorph.Impl.Typing <> τ:60 var
+R1747:1748 Quorph.Impl.Typing <> Γ:58 var
+R1762:1769 Quorph.Impl.Typing <> has_type:9 ind
+R1792:1797 Quorph.Impl.Types Types TArrow constr
+R1799:1800 Quorph.Impl.Typing <> τ:60 var
+R1802:1803 Quorph.Impl.Typing <> σ:61 var
+R1775:1778 Quorph.Impl.Term Term ELam constr
+R1780:1780 Quorph.Impl.Typing <> x:59 var
+R1782:1783 Quorph.Impl.Typing <> τ:60 var
+R1785:1788 Quorph.Impl.Typing <> body:62 var
+R1771:1772 Quorph.Impl.Typing <> Γ:58 var
+binder 1814:1815 <> Γ:63
+binder 1817:1817 <> f:64
+binder 1819:1819 <> e:65
+binder 1821:1822 <> τ:66
+binder 1824:1825 <> σ:67
+R1861:1864 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1833:1840 Quorph.Impl.Typing <> has_type:9 ind
+R1848:1853 Quorph.Impl.Types Types TArrow constr
+R1855:1856 Quorph.Impl.Typing <> τ:66 var
+R1858:1859 Quorph.Impl.Typing <> σ:67 var
+R1845:1845 Quorph.Impl.Typing <> f:64 var
+R1842:1843 Quorph.Impl.Typing <> Γ:63 var
+R1881:1884 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1865:1872 Quorph.Impl.Typing <> has_type:9 ind
+R1879:1880 Quorph.Impl.Typing <> τ:66 var
+R1877:1877 Quorph.Impl.Typing <> e:65 var
+R1874:1875 Quorph.Impl.Typing <> Γ:63 var
+R1885:1892 Quorph.Impl.Typing <> has_type:9 ind
+R1908:1909 Quorph.Impl.Typing <> σ:67 var
+R1898:1901 Quorph.Impl.Term Term EApp constr
+R1903:1903 Quorph.Impl.Typing <> f:64 var
+R1905:1905 Quorph.Impl.Typing <> e:65 var
+R1894:1895 Quorph.Impl.Typing <> Γ:63 var
+binder 1920:1921 <> Γ:68
+binder 1923:1923 <> R:69
+binder 1925:1927 <> τR:70
+R1935:1942 Quorph.Impl.Typing <> has_type:9 ind
+R1958:1962 Quorph.Impl.Types Types TColl constr
+R1964:1967 Quorph.Impl.Types Types kBag constr
+R1969:1971 Quorph.Impl.Typing <> τR:70 var
+R1948:1952 Quorph.Impl.Term Term EScan constr
+R1954:1954 Quorph.Impl.Typing <> R:69 var
+R1944:1945 Quorph.Impl.Typing <> Γ:68 var
+binder 1982:1983 <> Γ:71
+binder 1985:1985 <> f:72
+binder 1987:1987 <> c:73
+binder 1989:1990 <> τ:74
+binder 1992:1993 <> σ:75
+binder 1995:1996 <> κ:76
+R2031:2034 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2004:2011 Quorph.Impl.Typing <> has_type:9 ind
+R2019:2023 Quorph.Impl.Types Types TColl constr
+R2025:2026 Quorph.Impl.Typing <> κ:76 var
+R2028:2029 Quorph.Impl.Typing <> τ:74 var
+R2016:2016 Quorph.Impl.Typing <> c:73 var
+R2013:2014 Quorph.Impl.Typing <> Γ:71 var
+R2063:2066 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2035:2042 Quorph.Impl.Typing <> has_type:9 ind
+R2050:2055 Quorph.Impl.Types Types TArrow constr
+R2057:2058 Quorph.Impl.Typing <> τ:74 var
+R2060:2061 Quorph.Impl.Typing <> σ:75 var
+R2047:2047 Quorph.Impl.Typing <> f:72 var
+R2044:2045 Quorph.Impl.Typing <> Γ:71 var
+R2067:2074 Quorph.Impl.Typing <> has_type:9 ind
+R2091:2095 Quorph.Impl.Types Types TColl constr
+R2097:2098 Quorph.Impl.Typing <> κ:76 var
+R2100:2101 Quorph.Impl.Typing <> σ:75 var
+R2080:2083 Quorph.Impl.Term Term EMap constr
+R2085:2085 Quorph.Impl.Typing <> f:72 var
+R2087:2087 Quorph.Impl.Typing <> c:73 var
+R2076:2077 Quorph.Impl.Typing <> Γ:71 var
+binder 2114:2115 <> Γ:77
+binder 2117:2117 <> p:78
+binder 2119:2119 <> c:79
+binder 2121:2122 <> τ:80
+binder 2124:2125 <> κ:81
+R2160:2163 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2133:2140 Quorph.Impl.Typing <> has_type:9 ind
+R2148:2152 Quorph.Impl.Types Types TColl constr
+R2154:2155 Quorph.Impl.Typing <> κ:81 var
+R2157:2158 Quorph.Impl.Typing <> τ:80 var
+R2145:2145 Quorph.Impl.Typing <> c:79 var
+R2142:2143 Quorph.Impl.Typing <> Γ:77 var
+R2195:2198 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2164:2171 Quorph.Impl.Typing <> has_type:9 ind
+R2179:2184 Quorph.Impl.Types Types TArrow constr
+R2186:2187 Quorph.Impl.Typing <> τ:80 var
+R2189:2193 Quorph.Impl.Types Types TBool constr
+R2176:2176 Quorph.Impl.Typing <> p:78 var
+R2173:2174 Quorph.Impl.Typing <> Γ:77 var
+R2199:2206 Quorph.Impl.Typing <> has_type:9 ind
+R2225:2229 Quorph.Impl.Types Types TColl constr
+R2231:2232 Quorph.Impl.Typing <> κ:81 var
+R2234:2235 Quorph.Impl.Typing <> τ:80 var
+R2212:2217 Quorph.Impl.Term Term EWhere constr
+R2219:2219 Quorph.Impl.Typing <> p:78 var
+R2221:2221 Quorph.Impl.Typing <> c:79 var
+R2208:2209 Quorph.Impl.Typing <> Γ:77 var
+binder 2250:2251 <> Γ:82
+binder 2253:2253 <> c:83
+binder 2255:2256 <> τ:84
+binder 2258:2259 <> κ:85
+R2305:2308 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2267:2274 Quorph.Impl.Typing <> has_type:9 ind
+R2282:2286 Quorph.Impl.Types Types TColl constr
+R2288:2289 Quorph.Impl.Typing <> κ:85 var
+R2292:2296 Quorph.Impl.Types Types TColl constr
+R2298:2299 Quorph.Impl.Typing <> κ:85 var
+R2301:2302 Quorph.Impl.Typing <> τ:84 var
+R2279:2279 Quorph.Impl.Typing <> c:83 var
+R2276:2277 Quorph.Impl.Typing <> Γ:82 var
+R2309:2316 Quorph.Impl.Typing <> has_type:9 ind
+R2335:2339 Quorph.Impl.Types Types TColl constr
+R2341:2342 Quorph.Impl.Typing <> κ:85 var
+R2344:2345 Quorph.Impl.Typing <> τ:84 var
+R2322:2329 Quorph.Impl.Term Term EFlatten constr
+R2331:2331 Quorph.Impl.Typing <> c:83 var
+R2318:2319 Quorph.Impl.Typing <> Γ:82 var
+binder 2360:2361 <> Γ:86
+binder 2363:2363 <> c:87
+binder 2365:2366 <> fs:88
+binder 2368:2368 <> I:89
+binder 2370:2371 <> κ:90
+R2415:2422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2379:2386 Quorph.Impl.Typing <> has_type:9 ind
+R2394:2398 Quorph.Impl.Types Types TColl constr
+R2400:2401 Quorph.Impl.Typing <> κ:90 var
+R2404:2410 Quorph.Impl.Types Types TRecord constr
+R2412:2412 Quorph.Impl.Typing <> I:89 var
+R2391:2391 Quorph.Impl.Typing <> c:87 var
+R2388:2389 Quorph.Impl.Typing <> Γ:86 var
+R2464:2471 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2423:2428 Coq.Lists.List <> Forall ind
+R2462:2463 Quorph.Impl.Typing <> fs:88 var
+binder 2435:2435 <> a:91
+R2453:2455 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2440:2448 Quorph.Impl.Typing Typing in_fields def
+R2450:2450 Quorph.Impl.Typing <> a:91 var
+R2452:2452 Quorph.Impl.Typing <> I:89 var
+R2456:2459 Coq.Init.Datatypes <> true constr
+R2472:2479 Quorph.Impl.Typing <> has_type:9 ind
+R2513:2517 Quorph.Impl.Types Types TColl constr
+R2519:2520 Quorph.Impl.Typing <> κ:90 var
+R2523:2529 Quorph.Impl.Types Types TRecord constr
+R2532:2537 Coq.Lists.List <> filter def
+R2593:2593 Quorph.Impl.Typing <> I:89 var
+binder 2544:2544 <> p:92
+R2549:2555 Coq.Lists.List <> existsb def
+R2589:2590 Quorph.Impl.Typing <> fs:88 var
+binder 2562:2562 <> x:93
+R2567:2576 Coq.Strings.String <> eqb def
+R2579:2581 Coq.Init.Datatypes <> fst def
+R2583:2583 Quorph.Impl.Typing <> p:92 var
+R2586:2586 Quorph.Impl.Typing <> x:93 var
+R2491:2498 Quorph.Impl.Term Term EProject constr
+R2500:2501 Quorph.Impl.Typing <> fs:88 var
+R2503:2503 Quorph.Impl.Typing <> c:87 var
+R2481:2482 Quorph.Impl.Typing <> Γ:86 var
+binder 2607:2608 <> Γ:94
+binder 2610:2611 <> θ:95
+binder 2613:2614 <> c1:96
+binder 2616:2617 <> c2:97
+binder 2619:2620 <> τ:98
+binder 2622:2623 <> σ:99
+binder 2625:2626 <> κ:100
+R2662:2665 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2634:2641 Quorph.Impl.Typing <> has_type:9 ind
+R2650:2654 Quorph.Impl.Types Types TColl constr
+R2656:2657 Quorph.Impl.Typing <> κ:100 var
+R2659:2660 Quorph.Impl.Typing <> τ:98 var
+R2646:2647 Quorph.Impl.Typing <> c1:96 var
+R2643:2644 Quorph.Impl.Typing <> Γ:94 var
+R2694:2701 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2666:2673 Quorph.Impl.Typing <> has_type:9 ind
+R2682:2686 Quorph.Impl.Types Types TColl constr
+R2688:2689 Quorph.Impl.Typing <> κ:100 var
+R2691:2692 Quorph.Impl.Typing <> σ:99 var
+R2678:2679 Quorph.Impl.Typing <> c2:97 var
+R2675:2676 Quorph.Impl.Typing <> Γ:94 var
+R2745:2752 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2702:2709 Quorph.Impl.Typing <> has_type:9 ind
+R2718:2723 Quorph.Impl.Types Types TArrow constr
+R2726:2730 Quorph.Impl.Types Types TProd constr
+R2732:2733 Quorph.Impl.Typing <> τ:98 var
+R2735:2736 Quorph.Impl.Typing <> σ:99 var
+R2739:2743 Quorph.Impl.Types Types TBool constr
+R2714:2715 Quorph.Impl.Typing <> θ:95 var
+R2711:2712 Quorph.Impl.Typing <> Γ:94 var
+R2753:2760 Quorph.Impl.Typing <> has_type:9 ind
+R2783:2787 Quorph.Impl.Types Types TColl constr
+R2789:2790 Quorph.Impl.Typing <> κ:100 var
+R2793:2797 Quorph.Impl.Types Types TProd constr
+R2799:2800 Quorph.Impl.Typing <> τ:98 var
+R2802:2803 Quorph.Impl.Typing <> σ:99 var
+R2766:2770 Quorph.Impl.Term Term EJoin constr
+R2772:2773 Quorph.Impl.Typing <> θ:95 var
+R2775:2776 Quorph.Impl.Typing <> c1:96 var
+R2778:2779 Quorph.Impl.Typing <> c2:97 var
+R2762:2763 Quorph.Impl.Typing <> Γ:94 var
+binder 2817:2818 <> Γ:101
+binder 2820:2821 <> θ:102
+binder 2823:2824 <> c1:103
+binder 2826:2827 <> c2:104
+binder 2829:2830 <> τ:105
+binder 2832:2833 <> σ:106
+binder 2835:2836 <> κ:107
+R2872:2875 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2844:2851 Quorph.Impl.Typing <> has_type:9 ind
+R2860:2864 Quorph.Impl.Types Types TColl constr
+R2866:2867 Quorph.Impl.Typing <> κ:107 var
+R2869:2870 Quorph.Impl.Typing <> τ:105 var
+R2856:2857 Quorph.Impl.Typing <> c1:103 var
+R2853:2854 Quorph.Impl.Typing <> Γ:101 var
+R2904:2911 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2876:2883 Quorph.Impl.Typing <> has_type:9 ind
+R2892:2896 Quorph.Impl.Types Types TColl constr
+R2898:2899 Quorph.Impl.Typing <> κ:107 var
+R2901:2902 Quorph.Impl.Typing <> σ:106 var
+R2888:2889 Quorph.Impl.Typing <> c2:104 var
+R2885:2886 Quorph.Impl.Typing <> Γ:101 var
+R2955:2962 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2912:2919 Quorph.Impl.Typing <> has_type:9 ind
+R2928:2933 Quorph.Impl.Types Types TArrow constr
+R2936:2940 Quorph.Impl.Types Types TProd constr
+R2942:2943 Quorph.Impl.Typing <> τ:105 var
+R2945:2946 Quorph.Impl.Typing <> σ:106 var
+R2949:2953 Quorph.Impl.Types Types TBool constr
+R2924:2925 Quorph.Impl.Typing <> θ:102 var
+R2921:2922 Quorph.Impl.Typing <> Γ:101 var
+R2963:2970 Quorph.Impl.Typing <> has_type:9 ind
+R2998:3002 Quorph.Impl.Types Types TColl constr
+R3004:3005 Quorph.Impl.Typing <> κ:107 var
+R3007:3008 Quorph.Impl.Typing <> τ:105 var
+R2976:2985 Quorph.Impl.Term Term ESemiJoinL constr
+R2987:2988 Quorph.Impl.Typing <> θ:102 var
+R2990:2991 Quorph.Impl.Typing <> c1:103 var
+R2993:2994 Quorph.Impl.Typing <> c2:104 var
+R2972:2973 Quorph.Impl.Typing <> Γ:101 var
+binder 3021:3022 <> Γ:108
+binder 3024:3025 <> θ:109
+binder 3027:3028 <> c1:110
+binder 3030:3031 <> c2:111
+binder 3033:3034 <> τ:112
+binder 3036:3037 <> σ:113
+binder 3039:3040 <> κ:114
+R3076:3079 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3048:3055 Quorph.Impl.Typing <> has_type:9 ind
+R3064:3068 Quorph.Impl.Types Types TColl constr
+R3070:3071 Quorph.Impl.Typing <> κ:114 var
+R3073:3074 Quorph.Impl.Typing <> τ:112 var
+R3060:3061 Quorph.Impl.Typing <> c1:110 var
+R3057:3058 Quorph.Impl.Typing <> Γ:108 var
+R3108:3115 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3080:3087 Quorph.Impl.Typing <> has_type:9 ind
+R3096:3100 Quorph.Impl.Types Types TColl constr
+R3102:3103 Quorph.Impl.Typing <> κ:114 var
+R3105:3106 Quorph.Impl.Typing <> σ:113 var
+R3092:3093 Quorph.Impl.Typing <> c2:111 var
+R3089:3090 Quorph.Impl.Typing <> Γ:108 var
+R3159:3166 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3116:3123 Quorph.Impl.Typing <> has_type:9 ind
+R3132:3137 Quorph.Impl.Types Types TArrow constr
+R3140:3144 Quorph.Impl.Types Types TProd constr
+R3146:3147 Quorph.Impl.Typing <> τ:112 var
+R3149:3150 Quorph.Impl.Typing <> σ:113 var
+R3153:3157 Quorph.Impl.Types Types TBool constr
+R3128:3129 Quorph.Impl.Typing <> θ:109 var
+R3125:3126 Quorph.Impl.Typing <> Γ:108 var
+R3167:3174 Quorph.Impl.Typing <> has_type:9 ind
+R3202:3206 Quorph.Impl.Types Types TColl constr
+R3208:3209 Quorph.Impl.Typing <> κ:114 var
+R3211:3212 Quorph.Impl.Typing <> τ:112 var
+R3180:3189 Quorph.Impl.Term Term EAntiJoinL constr
+R3191:3192 Quorph.Impl.Typing <> θ:109 var
+R3194:3195 Quorph.Impl.Typing <> c1:110 var
+R3197:3198 Quorph.Impl.Typing <> c2:111 var
+R3176:3177 Quorph.Impl.Typing <> Γ:108 var
+binder 3225:3226 <> Γ:115
+binder 3228:3229 <> θ:116
+binder 3231:3232 <> c1:117
+binder 3234:3235 <> c2:118
+binder 3237:3238 <> τ:119
+binder 3240:3241 <> σ:120
+binder 3243:3244 <> κ:121
+R3280:3283 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3252:3259 Quorph.Impl.Typing <> has_type:9 ind
+R3268:3272 Quorph.Impl.Types Types TColl constr
+R3274:3275 Quorph.Impl.Typing <> κ:121 var
+R3277:3278 Quorph.Impl.Typing <> τ:119 var
+R3264:3265 Quorph.Impl.Typing <> c1:117 var
+R3261:3262 Quorph.Impl.Typing <> Γ:115 var
+R3312:3319 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3284:3291 Quorph.Impl.Typing <> has_type:9 ind
+R3300:3304 Quorph.Impl.Types Types TColl constr
+R3306:3307 Quorph.Impl.Typing <> κ:121 var
+R3309:3310 Quorph.Impl.Typing <> σ:120 var
+R3296:3297 Quorph.Impl.Typing <> c2:118 var
+R3293:3294 Quorph.Impl.Typing <> Γ:115 var
+R3363:3370 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3320:3327 Quorph.Impl.Typing <> has_type:9 ind
+R3336:3341 Quorph.Impl.Types Types TArrow constr
+R3344:3348 Quorph.Impl.Types Types TProd constr
+R3350:3351 Quorph.Impl.Typing <> τ:119 var
+R3353:3354 Quorph.Impl.Typing <> σ:120 var
+R3357:3361 Quorph.Impl.Types Types TBool constr
+R3332:3333 Quorph.Impl.Typing <> θ:116 var
+R3329:3330 Quorph.Impl.Typing <> Γ:115 var
+R3371:3378 Quorph.Impl.Typing <> has_type:9 ind
+R3406:3410 Quorph.Impl.Types Types TColl constr
+R3412:3413 Quorph.Impl.Typing <> κ:121 var
+R3415:3416 Quorph.Impl.Typing <> σ:120 var
+R3384:3393 Quorph.Impl.Term Term ESemiJoinR constr
+R3395:3396 Quorph.Impl.Typing <> θ:116 var
+R3398:3399 Quorph.Impl.Typing <> c1:117 var
+R3401:3402 Quorph.Impl.Typing <> c2:118 var
+R3380:3381 Quorph.Impl.Typing <> Γ:115 var
+binder 3429:3430 <> Γ:122
+binder 3432:3433 <> θ:123
+binder 3435:3436 <> c1:124
+binder 3438:3439 <> c2:125
+binder 3441:3442 <> τ:126
+binder 3444:3445 <> σ:127
+binder 3447:3448 <> κ:128
+R3484:3487 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3456:3463 Quorph.Impl.Typing <> has_type:9 ind
+R3472:3476 Quorph.Impl.Types Types TColl constr
+R3478:3479 Quorph.Impl.Typing <> κ:128 var
+R3481:3482 Quorph.Impl.Typing <> τ:126 var
+R3468:3469 Quorph.Impl.Typing <> c1:124 var
+R3465:3466 Quorph.Impl.Typing <> Γ:122 var
+R3516:3523 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3488:3495 Quorph.Impl.Typing <> has_type:9 ind
+R3504:3508 Quorph.Impl.Types Types TColl constr
+R3510:3511 Quorph.Impl.Typing <> κ:128 var
+R3513:3514 Quorph.Impl.Typing <> σ:127 var
+R3500:3501 Quorph.Impl.Typing <> c2:125 var
+R3497:3498 Quorph.Impl.Typing <> Γ:122 var
+R3567:3574 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3524:3531 Quorph.Impl.Typing <> has_type:9 ind
+R3540:3545 Quorph.Impl.Types Types TArrow constr
+R3548:3552 Quorph.Impl.Types Types TProd constr
+R3554:3555 Quorph.Impl.Typing <> τ:126 var
+R3557:3558 Quorph.Impl.Typing <> σ:127 var
+R3561:3565 Quorph.Impl.Types Types TBool constr
+R3536:3537 Quorph.Impl.Typing <> θ:123 var
+R3533:3534 Quorph.Impl.Typing <> Γ:122 var
+R3575:3582 Quorph.Impl.Typing <> has_type:9 ind
+R3610:3614 Quorph.Impl.Types Types TColl constr
+R3616:3617 Quorph.Impl.Typing <> κ:128 var
+R3619:3620 Quorph.Impl.Typing <> σ:127 var
+R3588:3597 Quorph.Impl.Term Term EAntiJoinR constr
+R3599:3600 Quorph.Impl.Typing <> θ:123 var
+R3602:3603 Quorph.Impl.Typing <> c1:124 var
+R3605:3606 Quorph.Impl.Typing <> c2:125 var
+R3584:3585 Quorph.Impl.Typing <> Γ:122 var
+binder 3637:3638 <> Γ:129
+binder 3640:3641 <> θ:130
+binder 3643:3644 <> c1:131
+binder 3646:3647 <> c2:132
+binder 3649:3650 <> τ:133
+binder 3652:3653 <> σ:134
+binder 3655:3656 <> κ:135
+R3692:3695 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3664:3671 Quorph.Impl.Typing <> has_type:9 ind
+R3680:3684 Quorph.Impl.Types Types TColl constr
+R3686:3687 Quorph.Impl.Typing <> κ:135 var
+R3689:3690 Quorph.Impl.Typing <> τ:133 var
+R3676:3677 Quorph.Impl.Typing <> c1:131 var
+R3673:3674 Quorph.Impl.Typing <> Γ:129 var
+R3724:3731 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3696:3703 Quorph.Impl.Typing <> has_type:9 ind
+R3712:3716 Quorph.Impl.Types Types TColl constr
+R3718:3719 Quorph.Impl.Typing <> κ:135 var
+R3721:3722 Quorph.Impl.Typing <> σ:134 var
+R3708:3709 Quorph.Impl.Typing <> c2:132 var
+R3705:3706 Quorph.Impl.Typing <> Γ:129 var
+R3775:3782 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3732:3739 Quorph.Impl.Typing <> has_type:9 ind
+R3748:3753 Quorph.Impl.Types Types TArrow constr
+R3756:3760 Quorph.Impl.Types Types TProd constr
+R3762:3763 Quorph.Impl.Typing <> τ:133 var
+R3765:3766 Quorph.Impl.Typing <> σ:134 var
+R3769:3773 Quorph.Impl.Types Types TBool constr
+R3744:3745 Quorph.Impl.Typing <> θ:130 var
+R3741:3742 Quorph.Impl.Typing <> Γ:129 var
+R3783:3790 Quorph.Impl.Typing <> has_type:9 ind
+R3818:3822 Quorph.Impl.Types Types TColl constr
+R3824:3825 Quorph.Impl.Typing <> κ:135 var
+R3828:3832 Quorph.Impl.Types Types TProd constr
+R3834:3835 Quorph.Impl.Typing <> τ:133 var
+R3838:3844 Quorph.Impl.Types Types TOption constr
+R3846:3847 Quorph.Impl.Typing <> σ:134 var
+R3796:3805 Quorph.Impl.Term Term ELeftOuter constr
+R3807:3808 Quorph.Impl.Typing <> θ:130 var
+R3810:3811 Quorph.Impl.Typing <> c1:131 var
+R3813:3814 Quorph.Impl.Typing <> c2:132 var
+R3792:3793 Quorph.Impl.Typing <> Γ:129 var
+binder 3867:3868 <> Γ:136
+binder 3870:3871 <> θ:137
+binder 3873:3874 <> c1:138
+binder 3876:3877 <> c2:139
+binder 3879:3880 <> τ:140
+binder 3882:3883 <> σ:141
+binder 3885:3886 <> κ:142
+R3922:3925 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3894:3901 Quorph.Impl.Typing <> has_type:9 ind
+R3910:3914 Quorph.Impl.Types Types TColl constr
+R3916:3917 Quorph.Impl.Typing <> κ:142 var
+R3919:3920 Quorph.Impl.Typing <> τ:140 var
+R3906:3907 Quorph.Impl.Typing <> c1:138 var
+R3903:3904 Quorph.Impl.Typing <> Γ:136 var
+R3954:3961 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3926:3933 Quorph.Impl.Typing <> has_type:9 ind
+R3942:3946 Quorph.Impl.Types Types TColl constr
+R3948:3949 Quorph.Impl.Typing <> κ:142 var
+R3951:3952 Quorph.Impl.Typing <> σ:141 var
+R3938:3939 Quorph.Impl.Typing <> c2:139 var
+R3935:3936 Quorph.Impl.Typing <> Γ:136 var
+R4005:4012 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3962:3969 Quorph.Impl.Typing <> has_type:9 ind
+R3978:3983 Quorph.Impl.Types Types TArrow constr
+R3986:3990 Quorph.Impl.Types Types TProd constr
+R3992:3993 Quorph.Impl.Typing <> τ:140 var
+R3995:3996 Quorph.Impl.Typing <> σ:141 var
+R3999:4003 Quorph.Impl.Types Types TBool constr
+R3974:3975 Quorph.Impl.Typing <> θ:137 var
+R3971:3972 Quorph.Impl.Typing <> Γ:136 var
+R4013:4020 Quorph.Impl.Typing <> has_type:9 ind
+R4049:4053 Quorph.Impl.Types Types TColl constr
+R4055:4056 Quorph.Impl.Typing <> κ:142 var
+R4059:4063 Quorph.Impl.Types Types TProd constr
+R4066:4072 Quorph.Impl.Types Types TOption constr
+R4074:4075 Quorph.Impl.Typing <> τ:140 var
+R4078:4079 Quorph.Impl.Typing <> σ:141 var
+R4026:4036 Quorph.Impl.Term Term ERightOuter constr
+R4038:4039 Quorph.Impl.Typing <> θ:137 var
+R4041:4042 Quorph.Impl.Typing <> c1:138 var
+R4044:4045 Quorph.Impl.Typing <> c2:139 var
+R4022:4023 Quorph.Impl.Typing <> Γ:136 var
+binder 4097:4098 <> Γ:143
+binder 4100:4101 <> θ:144
+binder 4103:4104 <> c1:145
+binder 4106:4107 <> c2:146
+binder 4109:4110 <> τ:147
+binder 4112:4113 <> σ:148
+binder 4115:4116 <> κ:149
+R4152:4155 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4124:4131 Quorph.Impl.Typing <> has_type:9 ind
+R4140:4144 Quorph.Impl.Types Types TColl constr
+R4146:4147 Quorph.Impl.Typing <> κ:149 var
+R4149:4150 Quorph.Impl.Typing <> τ:147 var
+R4136:4137 Quorph.Impl.Typing <> c1:145 var
+R4133:4134 Quorph.Impl.Typing <> Γ:143 var
+R4184:4191 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4156:4163 Quorph.Impl.Typing <> has_type:9 ind
+R4172:4176 Quorph.Impl.Types Types TColl constr
+R4178:4179 Quorph.Impl.Typing <> κ:149 var
+R4181:4182 Quorph.Impl.Typing <> σ:148 var
+R4168:4169 Quorph.Impl.Typing <> c2:146 var
+R4165:4166 Quorph.Impl.Typing <> Γ:143 var
+R4235:4242 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4192:4199 Quorph.Impl.Typing <> has_type:9 ind
+R4208:4213 Quorph.Impl.Types Types TArrow constr
+R4216:4220 Quorph.Impl.Types Types TProd constr
+R4222:4223 Quorph.Impl.Typing <> τ:147 var
+R4225:4226 Quorph.Impl.Typing <> σ:148 var
+R4229:4233 Quorph.Impl.Types Types TBool constr
+R4204:4205 Quorph.Impl.Typing <> θ:144 var
+R4201:4202 Quorph.Impl.Typing <> Γ:143 var
+R4243:4250 Quorph.Impl.Typing <> has_type:9 ind
+R4278:4282 Quorph.Impl.Types Types TColl constr
+R4284:4285 Quorph.Impl.Typing <> κ:149 var
+R4288:4292 Quorph.Impl.Types Types TProd constr
+R4295:4301 Quorph.Impl.Types Types TOption constr
+R4303:4304 Quorph.Impl.Typing <> τ:147 var
+R4308:4314 Quorph.Impl.Types Types TOption constr
+R4316:4317 Quorph.Impl.Typing <> σ:148 var
+R4256:4265 Quorph.Impl.Term Term EFullOuter constr
+R4267:4268 Quorph.Impl.Typing <> θ:144 var
+R4270:4271 Quorph.Impl.Typing <> c1:145 var
+R4273:4274 Quorph.Impl.Typing <> c2:146 var
+R4252:4253 Quorph.Impl.Typing <> Γ:143 var
+binder 4335:4336 <> Γ:150
+binder 4338:4338 <> u:151
+binder 4340:4340 <> v:152
+binder 4342:4343 <> τ:153
+binder 4345:4346 <> κ:154
+R4381:4384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4354:4361 Quorph.Impl.Typing <> has_type:9 ind
+R4369:4373 Quorph.Impl.Types Types TColl constr
+R4375:4376 Quorph.Impl.Typing <> κ:154 var
+R4378:4379 Quorph.Impl.Typing <> τ:153 var
+R4366:4366 Quorph.Impl.Typing <> u:151 var
+R4363:4364 Quorph.Impl.Typing <> Γ:150 var
+R4412:4419 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4385:4392 Quorph.Impl.Typing <> has_type:9 ind
+R4400:4404 Quorph.Impl.Types Types TColl constr
+R4406:4407 Quorph.Impl.Typing <> κ:154 var
+R4409:4410 Quorph.Impl.Typing <> τ:153 var
+R4397:4397 Quorph.Impl.Typing <> v:152 var
+R4394:4395 Quorph.Impl.Typing <> Γ:150 var
+R4420:4427 Quorph.Impl.Typing <> has_type:9 ind
+R4449:4453 Quorph.Impl.Types Types TColl constr
+R4455:4456 Quorph.Impl.Typing <> κ:154 var
+R4458:4459 Quorph.Impl.Typing <> τ:153 var
+R4433:4441 Quorph.Impl.Term Term EUnionAll constr
+R4443:4443 Quorph.Impl.Typing <> u:151 var
+R4445:4445 Quorph.Impl.Typing <> v:152 var
+R4429:4430 Quorph.Impl.Typing <> Γ:150 var
+binder 4472:4473 <> Γ:155
+binder 4475:4475 <> u:156
+binder 4477:4477 <> v:157
+binder 4479:4480 <> τ:158
+binder 4482:4483 <> κ:159
+R4518:4521 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4491:4498 Quorph.Impl.Typing <> has_type:9 ind
+R4506:4510 Quorph.Impl.Types Types TColl constr
+R4512:4513 Quorph.Impl.Typing <> κ:159 var
+R4515:4516 Quorph.Impl.Typing <> τ:158 var
+R4503:4503 Quorph.Impl.Typing <> u:156 var
+R4500:4501 Quorph.Impl.Typing <> Γ:155 var
+R4549:4556 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4522:4529 Quorph.Impl.Typing <> has_type:9 ind
+R4537:4541 Quorph.Impl.Types Types TColl constr
+R4543:4544 Quorph.Impl.Typing <> κ:159 var
+R4546:4547 Quorph.Impl.Typing <> τ:158 var
+R4534:4534 Quorph.Impl.Typing <> v:157 var
+R4531:4532 Quorph.Impl.Typing <> Γ:155 var
+R4557:4564 Quorph.Impl.Typing <> has_type:9 ind
+R4583:4587 Quorph.Impl.Types Types TColl constr
+R4589:4592 Quorph.Impl.Types Types kSet constr
+R4594:4595 Quorph.Impl.Typing <> τ:158 var
+R4570:4575 Quorph.Impl.Term Term EUnion constr
+R4577:4577 Quorph.Impl.Typing <> u:156 var
+R4579:4579 Quorph.Impl.Typing <> v:157 var
+R4566:4567 Quorph.Impl.Typing <> Γ:155 var
+binder 4611:4612 <> Γ:160
+binder 4614:4614 <> c:161
+binder 4616:4617 <> τ:162
+R4654:4657 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4625:4632 Quorph.Impl.Typing <> has_type:9 ind
+R4640:4644 Quorph.Impl.Types Types TColl constr
+R4646:4649 Quorph.Impl.Types Types kBag constr
+R4651:4652 Quorph.Impl.Typing <> τ:162 var
+R4637:4637 Quorph.Impl.Typing <> c:161 var
+R4634:4635 Quorph.Impl.Typing <> Γ:160 var
+R4658:4665 Quorph.Impl.Typing <> has_type:9 ind
+R4685:4689 Quorph.Impl.Types Types TColl constr
+R4691:4694 Quorph.Impl.Types Types kSet constr
+R4696:4697 Quorph.Impl.Typing <> τ:162 var
+R4671:4679 Quorph.Impl.Term Term EDistinct constr
+R4681:4681 Quorph.Impl.Typing <> c:161 var
+R4667:4668 Quorph.Impl.Typing <> Γ:160 var
+binder 4712:4713 <> Γ:163
+binder 4715:4715 <> k:164
+binder 4717:4717 <> c:165
+binder 4719:4720 <> τ:166
+binder 4722:4722 <> K:167
+binder 4724:4725 <> κ:168
+R4760:4763 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4733:4740 Quorph.Impl.Typing <> has_type:9 ind
+R4748:4752 Quorph.Impl.Types Types TColl constr
+R4754:4755 Quorph.Impl.Typing <> κ:168 var
+R4757:4758 Quorph.Impl.Typing <> τ:166 var
+R4745:4745 Quorph.Impl.Typing <> c:165 var
+R4742:4743 Quorph.Impl.Typing <> Γ:163 var
+R4791:4798 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4764:4771 Quorph.Impl.Typing <> has_type:9 ind
+R4779:4784 Quorph.Impl.Types Types TArrow constr
+R4786:4787 Quorph.Impl.Typing <> τ:166 var
+R4789:4789 Quorph.Impl.Typing <> K:167 var
+R4776:4776 Quorph.Impl.Typing <> k:164 var
+R4773:4774 Quorph.Impl.Typing <> Γ:163 var
+R4799:4806 Quorph.Impl.Typing <> has_type:9 ind
+R4827:4831 Quorph.Impl.Types Types TColl constr
+R4833:4834 Quorph.Impl.Typing <> κ:168 var
+R4837:4841 Quorph.Impl.Types Types TProd constr
+R4843:4843 Quorph.Impl.Typing <> K:167 var
+R4846:4850 Quorph.Impl.Types Types TColl constr
+R4852:4853 Quorph.Impl.Typing <> κ:168 var
+R4855:4856 Quorph.Impl.Typing <> τ:166 var
+R4812:4819 Quorph.Impl.Term Term EGroupBy constr
+R4821:4821 Quorph.Impl.Typing <> k:164 var
+R4823:4823 Quorph.Impl.Typing <> c:165 var
+R4808:4809 Quorph.Impl.Typing <> Γ:163 var
+binder 4875:4876 <> Γ:169
+binder 4878:4880 <> agg:170
+binder 4882:4882 <> c:171
+binder 4884:4885 <> τ:172
+R4922:4929 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4893:4900 Quorph.Impl.Typing <> has_type:9 ind
+R4908:4912 Quorph.Impl.Types Types TColl constr
+R4914:4917 Quorph.Impl.Types Types kBag constr
+R4919:4920 Quorph.Impl.Typing <> τ:172 var
+R4905:4905 Quorph.Impl.Typing <> c:171 var
+R4902:4903 Quorph.Impl.Typing <> Γ:169 var
+R4930:4937 Quorph.Impl.Typing <> has_type:9 ind
+R4962:4968 Quorph.Impl.Types Types TRecord constr
+R4970:4971 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R4943:4952 Quorph.Impl.Term Term EAggregate constr
+R4954:4956 Quorph.Impl.Typing <> agg:170 var
+R4958:4958 Quorph.Impl.Typing <> c:171 var
+R4939:4940 Quorph.Impl.Typing <> Γ:169 var
+binder 5007:5008 <> Γ:173
+binder 5010:5012 <> psi:174
+binder 5014:5014 <> g:175
+binder 5016:5016 <> K:176
+binder 5018:5019 <> β:177
+binder 5021:5022 <> κ:178
+R5067:5070 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5030:5037 Quorph.Impl.Typing <> has_type:9 ind
+R5045:5049 Quorph.Impl.Types Types TColl constr
+R5051:5052 Quorph.Impl.Typing <> κ:178 var
+R5055:5059 Quorph.Impl.Types Types TProd constr
+R5061:5061 Quorph.Impl.Typing <> K:176 var
+R5063:5064 Quorph.Impl.Typing <> β:177 var
+R5042:5042 Quorph.Impl.Typing <> g:175 var
+R5039:5040 Quorph.Impl.Typing <> Γ:173 var
+R5114:5121 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5071:5078 Quorph.Impl.Typing <> has_type:9 ind
+R5088:5093 Quorph.Impl.Types Types TArrow constr
+R5096:5100 Quorph.Impl.Types Types TProd constr
+R5102:5102 Quorph.Impl.Typing <> K:176 var
+R5104:5105 Quorph.Impl.Typing <> β:177 var
+R5108:5112 Quorph.Impl.Types Types TBool constr
+R5083:5085 Quorph.Impl.Typing <> psi:174 var
+R5080:5081 Quorph.Impl.Typing <> Γ:173 var
+R5122:5129 Quorph.Impl.Typing <> has_type:9 ind
+R5151:5155 Quorph.Impl.Types Types TColl constr
+R5157:5158 Quorph.Impl.Typing <> κ:178 var
+R5161:5165 Quorph.Impl.Types Types TProd constr
+R5167:5167 Quorph.Impl.Typing <> K:176 var
+R5169:5170 Quorph.Impl.Typing <> β:177 var
+R5135:5141 Quorph.Impl.Term Term EHaving constr
+R5143:5145 Quorph.Impl.Typing <> psi:174 var
+R5147:5147 Quorph.Impl.Typing <> g:175 var
+R5131:5132 Quorph.Impl.Typing <> Γ:173 var
+binder 5184:5185 <> Γ:179
+binder 5187:5187 <> k:180
+binder 5189:5189 <> c:181
+binder 5191:5192 <> τ:182
+R5229:5232 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5200:5207 Quorph.Impl.Typing <> has_type:9 ind
+R5215:5219 Quorph.Impl.Types Types TColl constr
+R5221:5224 Quorph.Impl.Types Types kBag constr
+R5226:5227 Quorph.Impl.Typing <> τ:182 var
+R5212:5212 Quorph.Impl.Typing <> c:181 var
+R5209:5210 Quorph.Impl.Typing <> Γ:179 var
+R5271:5278 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5233:5240 Quorph.Impl.Typing <> has_type:9 ind
+R5248:5253 Quorph.Impl.Types Types TArrow constr
+R5255:5256 Quorph.Impl.Typing <> τ:182 var
+R5259:5265 Quorph.Impl.Types Types TRecord constr
+R5267:5268 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R5245:5245 Quorph.Impl.Typing <> k:180 var
+R5242:5243 Quorph.Impl.Typing <> Γ:179 var
+R5279:5286 Quorph.Impl.Typing <> has_type:9 ind
+R5305:5309 Quorph.Impl.Types Types TColl constr
+R5311:5314 Quorph.Impl.Types Types kBag constr
+R5316:5317 Quorph.Impl.Typing <> τ:182 var
+R5292:5297 Quorph.Impl.Term Term EOrder constr
+R5299:5299 Quorph.Impl.Typing <> k:180 var
+R5301:5301 Quorph.Impl.Typing <> c:181 var
+R5288:5289 Quorph.Impl.Typing <> Γ:179 var
+binder 5330:5331 <> Γ:183
+binder 5333:5333 <> n:184
+binder 5335:5335 <> c:185
+binder 5337:5338 <> τ:186
+binder 5340:5341 <> κ:187
+R5367:5370 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5349:5356 Quorph.Impl.Typing <> has_type:9 ind
+R5363:5366 Quorph.Impl.Types Types TInt constr
+R5361:5361 Quorph.Impl.Typing <> n:184 var
+R5358:5359 Quorph.Impl.Typing <> Γ:183 var
+R5398:5405 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5371:5378 Quorph.Impl.Typing <> has_type:9 ind
+R5386:5390 Quorph.Impl.Types Types TColl constr
+R5392:5393 Quorph.Impl.Typing <> κ:187 var
+R5395:5396 Quorph.Impl.Typing <> τ:186 var
+R5383:5383 Quorph.Impl.Typing <> c:185 var
+R5380:5381 Quorph.Impl.Typing <> Γ:183 var
+R5406:5413 Quorph.Impl.Typing <> has_type:9 ind
+R5432:5436 Quorph.Impl.Types Types TColl constr
+R5438:5439 Quorph.Impl.Typing <> κ:187 var
+R5441:5442 Quorph.Impl.Typing <> τ:186 var
+R5419:5424 Quorph.Impl.Term Term ELimit constr
+R5426:5426 Quorph.Impl.Typing <> n:184 var
+R5428:5428 Quorph.Impl.Typing <> c:185 var
+R5415:5416 Quorph.Impl.Typing <> Γ:183 var
+binder 5455:5456 <> Γ:188
+binder 5458:5458 <> e:189
+binder 5460:5461 <> κ:190
+R5499:5506 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5469:5476 Quorph.Impl.Typing <> has_type:9 ind
+R5484:5488 Quorph.Impl.Types Types TColl constr
+R5490:5491 Quorph.Impl.Typing <> κ:190 var
+R5493:5497 Quorph.Impl.Types Types TUnit constr
+R5481:5481 Quorph.Impl.Typing <> e:189 var
+R5478:5479 Quorph.Impl.Typing <> Γ:188 var
+R5507:5514 Quorph.Impl.Typing <> has_type:9 ind
+R5530:5533 Quorph.Impl.Types Types TInt constr
+R5520:5525 Quorph.Impl.Term Term ECount constr
+R5527:5527 Quorph.Impl.Typing <> e:189 var
+R5516:5517 Quorph.Impl.Typing <> Γ:188 var
+scheme 566:573 Typing has_type_ind
+scheme 566:573 Typing has_type_sind
+R5540:5545 Quorph.Impl.Typing Typing <> mod

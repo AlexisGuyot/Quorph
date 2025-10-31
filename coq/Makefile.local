@@ -1,0 +1,6 @@
+.PHONY: extraction
+extraction:
+	@echo "Running extraction to OCaml..."
+	@coqc -Q impl Quorph.Impl -Q algo Quorph.Algo -Q extract Quorph.Extract extract/Extract.v
+	@mkdir -p ir
+	@mv *.ml ir/ 2>/dev/null || true

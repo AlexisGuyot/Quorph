@@ -1,0 +1,5 @@
+(library
+ (name quorph_core)
+ (wrapped false)
+ (modules quorph_runtime quorph_frontend)
+ (libraries yojson quorph_parser quorph_typing))

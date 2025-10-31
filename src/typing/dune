@@ -1,0 +1,5 @@
+(library
+ (name quorph_typing)
+ (wrapped false)
+ (modules catalog typing_driver)
+ (libraries yojson quorph_parser quorph_bridge quorph_ir))

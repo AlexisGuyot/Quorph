@@ -1,0 +1,9 @@
+DIGEST 17e967851c3918f1855073ccc747ef4b
+FQuorph.Impl.Context
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R44:56 Coq.Lists.List ListNotations <> mod
+mod 92:98 <> Context
+def 112:114 Context var
+R119:124 Coq.Strings.String <> string ind
+R131:137 Quorph.Impl.Context Context <> mod

@@ -1,0 +1,8 @@
+DIGEST b19e88e775f00fd18076f75e232cd000
+FQuorph.Impl.SemanticsList
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R51:63 Coq.Lists.List ListNotations <> mod
+mod 119:131 <> SemanticsList
+R199:211 Quorph.Impl.SemanticsList SemanticsList <> mod

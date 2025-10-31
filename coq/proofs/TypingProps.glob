@@ -1,0 +1,94 @@
+DIGEST 0d1f636c195612df8c95a03dae0ab691
+FQuorph.Proofs.TypingProps
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R44:56 Coq.Lists.List ListNotations <> mod
+R117:121 Quorph.Impl.Types <> <> lib
+R123:126 Quorph.Impl.Term <> <> lib
+R128:133 Quorph.Impl.Typing <> <> lib
+mod 143:153 <> TypingProps
+R163:167 Quorph.Impl.Types Types <> mod
+R169:172 Quorph.Impl.Term Term <> mod
+R174:179 Quorph.Impl.Typing Typing <> mod
+prf 189:197 TypingProps weakening
+binder 210:211 <> Γ:1
+binder 213:215 <> Γ':2
+binder 217:217 <> e:3
+binder 219:220 <> τ:4
+R227:227 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R285:293 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 235:235 <> x:5
+binder 237:237 <> t:6
+R260:263 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R251:253 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R240:245 Quorph.Impl.Typing Typing lookup def
+R247:247 Quorph.Proofs.TypingProps <> x:5 var
+R249:250 Quorph.Proofs.TypingProps <> Γ:1 var
+R254:257 Coq.Init.Datatypes <> Some constr
+R259:259 Quorph.Proofs.TypingProps <> t:6 var
+R276:278 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R264:269 Quorph.Impl.Typing Typing lookup def
+R271:271 Quorph.Proofs.TypingProps <> x:5 var
+R273:275 Quorph.Proofs.TypingProps <> Γ':2 var
+R279:282 Coq.Init.Datatypes <> Some constr
+R284:284 Quorph.Proofs.TypingProps <> t:6 var
+R310:317 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R294:301 Quorph.Impl.Typing Typing has_type ind
+R303:304 Quorph.Proofs.TypingProps <> Γ:1 var
+R306:306 Quorph.Proofs.TypingProps <> e:3 var
+R308:309 Quorph.Proofs.TypingProps <> τ:4 var
+R318:325 Quorph.Impl.Typing Typing has_type ind
+R327:329 Quorph.Proofs.TypingProps <> Γ':2 var
+R331:331 Quorph.Proofs.TypingProps <> e:3 var
+R333:334 Quorph.Proofs.TypingProps <> τ:4 var
+prf 361:372 TypingProps substitution
+binder 385:386 <> Γ:7
+binder 388:388 <> x:8
+binder 390:391 <> σ:9
+binder 393:393 <> e:10
+binder 395:396 <> τ:11
+binder 398:398 <> v:12
+R431:438 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R405:412 Quorph.Impl.Typing Typing has_type ind
+R421:422 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R415:415 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R417:417 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R420:420 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R416:416 Quorph.Proofs.TypingProps <> x:8 var
+R418:419 Quorph.Proofs.TypingProps <> σ:9 var
+R423:424 Quorph.Proofs.TypingProps <> Γ:7 var
+R427:427 Quorph.Proofs.TypingProps <> e:10 var
+R429:430 Quorph.Proofs.TypingProps <> τ:11 var
+R455:462 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R439:446 Quorph.Impl.Typing Typing has_type ind
+R448:449 Quorph.Proofs.TypingProps <> Γ:7 var
+R451:451 Quorph.Proofs.TypingProps <> v:12 var
+R453:454 Quorph.Proofs.TypingProps <> σ:9 var
+R463:470 Quorph.Impl.Typing Typing has_type ind
+R472:473 Quorph.Proofs.TypingProps <> Γ:7 var
+R476:484 Quorph.Impl.Term Term EApp constr
+R487:495 Quorph.Impl.Term Term ELam constr
+R497:497 Quorph.Proofs.TypingProps <> x:8 var
+R499:500 Quorph.Proofs.TypingProps <> σ:9 var
+R502:502 Quorph.Proofs.TypingProps <> e:10 var
+R505:505 Quorph.Proofs.TypingProps <> v:12 var
+R508:509 Quorph.Proofs.TypingProps <> τ:11 var
+prf 536:546 TypingProps determinism
+binder 559:560 <> Γ:13
+binder 562:562 <> e:14
+binder 564:566 <> τ1:15
+binder 568:570 <> τ2:16
+R594:597 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R577:584 Quorph.Impl.Typing Typing has_type ind
+R586:587 Quorph.Proofs.TypingProps <> Γ:13 var
+R589:589 Quorph.Proofs.TypingProps <> e:14 var
+R591:593 Quorph.Proofs.TypingProps <> τ1:15 var
+R615:618 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R598:605 Quorph.Impl.Typing Typing has_type ind
+R607:608 Quorph.Proofs.TypingProps <> Γ:13 var
+R610:610 Quorph.Proofs.TypingProps <> e:14 var
+R612:614 Quorph.Proofs.TypingProps <> τ2:16 var
+R622:624 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R619:621 Quorph.Proofs.TypingProps <> τ1:15 var
+R625:627 Quorph.Proofs.TypingProps <> τ2:16 var
+R652:662 Quorph.Proofs.TypingProps TypingProps <> mod

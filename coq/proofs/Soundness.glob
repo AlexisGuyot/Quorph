@@ -1,0 +1,7 @@
+DIGEST 5a799e3c2e19a38283601d680af2cafd
+FQuorph.Proofs.Soundness
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R44:56 Coq.Lists.List ListNotations <> mod
+mod 92:100 <> Soundness
+R174:182 Quorph.Proofs.Soundness Soundness <> mod

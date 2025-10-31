@@ -1,0 +1,60 @@
+DIGEST 56acf8b024c5ee551c278e99663bd24c
+FQuorph.Impl.Types
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R51:63 Coq.Lists.List ListNotations <> mod
+mod 119:123 <> Types
+ind 137:141 Types kappa
+constr 146:149 Types kBag
+constr 153:156 Types kSet
+scheme 137:141 Types kappa_rect
+scheme 137:141 Types kappa_ind
+scheme 137:141 Types kappa_rec
+scheme 137:141 Types kappa_sind
+ind 170:171 Types ty
+constr 185:189 Types TUnit
+constr 193:197 Types TBool
+constr 201:204 Types TInt
+constr 208:214 Types TString
+constr 218:222 Types TProd
+constr 237:240 Types TSum
+constr 256:262 Types TOption
+constr 275:280 Types TArrow
+constr 295:299 Types TColl
+constr 324:330 Types TRecord
+R231:232 Quorph.Impl.Types <> ty:3 ind
+binder 225:225 <> a:5
+binder 227:227 <> b:6
+R250:251 Quorph.Impl.Types <> ty:3 ind
+binder 244:244 <> a:7
+binder 246:246 <> b:8
+R269:270 Quorph.Impl.Types <> ty:3 ind
+binder 265:265 <> a:9
+R289:290 Quorph.Impl.Types <> ty:3 ind
+binder 283:283 <> a:10
+binder 285:285 <> b:11
+R306:310 Quorph.Impl.Types Types kappa ind
+binder 302:302 <> k:12
+R318:319 Quorph.Impl.Types <> ty:3 ind
+binder 314:314 <> a:13
+R338:341 Coq.Init.Datatypes <> list ind
+R350:352 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R344:349 Coq.Strings.String <> string ind
+R353:354 Quorph.Impl.Types <> ty:3 ind
+binder 333:334 <> fs:14
+scheme 170:171 Types ty_rect
+scheme 170:171 Types ty_ind
+scheme 170:171 Types ty_rec
+scheme 170:171 Types ty_sind
+def 371:376 Types fields
+R381:382 Quorph.Impl.Types Types ty ind
+binder 379:379 <> t:15
+R387:390 Coq.Init.Datatypes <> list ind
+R392:397 Coq.Strings.String <> string ind
+R410:410 Quorph.Impl.Types <> t:15 var
+R421:427 Quorph.Impl.Types Types TRecord constr
+R435:437 Coq.Lists.List <> map def
+R439:441 Coq.Init.Datatypes <> fst def
+R455:456 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R470:474 Quorph.Impl.Types Types <> mod

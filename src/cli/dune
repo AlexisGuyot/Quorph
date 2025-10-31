@@ -1,0 +1,5 @@
+(executable
+ (name main)
+ (public_name quorph)
+ (modules cmd_parse cmd_pp cmd_type cmd_laws main)
+ (libraries yojson cmdliner quorph_core quorph_parser))

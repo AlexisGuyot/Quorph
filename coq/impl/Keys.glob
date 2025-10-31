@@ -1,0 +1,135 @@
+DIGEST f938947f8a64e06d22249af53146d2af
+FQuorph.Impl.Keys
+R24:29 Coq.Strings.String <> <> lib
+R31:34 Coq.Lists.List <> <> lib
+R36:41 Coq.ZArith.ZArith <> <> lib
+R43:57 Coq.Program.Tactics <> <> lib
+R67:79 Coq.Lists.List ListNotations <> mod
+mod 135:138 <> Keys
+rec 148:157 Keys TotalOrder
+proj 175:177 Keys leA
+proj 199:205 Keys le_refl
+proj 231:238 Keys le_trans
+proj 289:298 Keys le_antisym
+proj 345:352 Keys le_total
+binder 160:160 <> A:1
+R182:185 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R181:181 Quorph.Impl.Keys <> A:1 var
+R187:190 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R186:186 Quorph.Impl.Keys <> A:1 var
+binder 217:217 <> x:4
+R220:222 Quorph.Impl.Keys <> leA:3 meth
+R226:226 Quorph.Impl.Keys <> x:4 var
+R224:224 Quorph.Impl.Keys <> x:4 var
+binder 249:249 <> x:6
+binder 251:251 <> y:7
+binder 253:253 <> z:8
+R263:266 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R256:258 Quorph.Impl.Keys <> leA:3 meth
+R262:262 Quorph.Impl.Keys <> y:7 var
+R260:260 Quorph.Impl.Keys <> x:6 var
+R274:277 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R267:269 Quorph.Impl.Keys <> leA:3 meth
+R273:273 Quorph.Impl.Keys <> z:8 var
+R271:271 Quorph.Impl.Keys <> y:7 var
+R278:280 Quorph.Impl.Keys <> leA:3 meth
+R284:284 Quorph.Impl.Keys <> z:8 var
+R282:282 Quorph.Impl.Keys <> x:6 var
+binder 309:309 <> x:10
+binder 311:311 <> y:11
+R321:324 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R314:316 Quorph.Impl.Keys <> leA:3 meth
+R320:320 Quorph.Impl.Keys <> y:11 var
+R318:318 Quorph.Impl.Keys <> x:10 var
+R332:335 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R325:327 Quorph.Impl.Keys <> leA:3 meth
+R331:331 Quorph.Impl.Keys <> x:10 var
+R329:329 Quorph.Impl.Keys <> y:11 var
+R337:339 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R336:336 Quorph.Impl.Keys <> x:10 var
+R340:340 Quorph.Impl.Keys <> y:11 var
+binder 363:363 <> x:13
+binder 365:365 <> y:14
+R375:378 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R368:370 Quorph.Impl.Keys <> leA:3 meth
+R374:374 Quorph.Impl.Keys <> y:14 var
+R372:372 Quorph.Impl.Keys <> x:13 var
+R379:381 Quorph.Impl.Keys <> leA:3 meth
+R385:385 Quorph.Impl.Keys <> x:13 var
+R383:383 Quorph.Impl.Keys <> y:14 var
+inst 408:422 Keys TotalOrder_prod
+binder 427:427 <> A:16
+binder 429:429 <> B:17
+R434:443 Quorph.Impl.Keys Keys TotalOrder class
+R445:445 Quorph.Impl.Keys <> A:16 var
+binder 434:445 <> H:18
+R450:459 Quorph.Impl.Keys Keys TotalOrder class
+R461:461 Quorph.Impl.Keys <> B:17 var
+binder 450:461 <> H0:19
+R466:475 Quorph.Impl.Keys Keys TotalOrder class
+R479:479 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R478:478 Quorph.Impl.Keys <> A:16 var
+R480:480 Quorph.Impl.Keys <> B:17 var
+R491:493 Quorph.Impl.Keys Keys leA meth
+R496:496 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R499:499 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R502:502 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 500:501 <> b1:20
+binder 497:498 <> a1:21
+binder 496:502 <> pat:22
+R505:505 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R508:508 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R511:511 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+binder 509:510 <> b2:23
+binder 506:507 <> a2:24
+binder 505:511 <> pat:25
+R516:516 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R542:547 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R568:568 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R526:529 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R517:519 Quorph.Impl.Keys Keys leA meth
+R524:525 Quorph.Impl.Keys <> a2:24 var
+R521:522 Quorph.Impl.Keys <> a1:21 var
+R530:531 Coq.Init.Logic <> ::type_scope:'~'_x not
+R541:541 Coq.Init.Logic <> ::type_scope:'~'_x not
+R532:534 Quorph.Impl.Keys Keys leA meth
+R539:540 Quorph.Impl.Keys <> a1:21 var
+R536:537 Quorph.Impl.Keys <> a2:24 var
+R555:558 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R550:552 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R548:549 Quorph.Impl.Keys <> a1:21 var
+R553:554 Quorph.Impl.Keys <> a2:24 var
+R559:561 Quorph.Impl.Keys Keys leA meth
+R566:567 Quorph.Impl.Keys <> b2:23 var
+R563:564 Quorph.Impl.Keys <> b1:20 var
+inst 699:712 Keys TotalOrder_sum
+binder 717:717 <> A:26
+binder 719:719 <> B:27
+R724:733 Quorph.Impl.Keys Keys TotalOrder class
+R735:735 Quorph.Impl.Keys <> A:26 var
+binder 724:735 <> H:28
+R740:749 Quorph.Impl.Keys Keys TotalOrder class
+R751:751 Quorph.Impl.Keys <> B:27 var
+binder 740:751 <> H0:29
+R756:765 Quorph.Impl.Keys Keys TotalOrder class
+R768:770 Coq.Init.Datatypes <> sum ind
+R774:774 Quorph.Impl.Keys <> B:27 var
+R772:772 Quorph.Impl.Keys <> A:26 var
+R784:786 Quorph.Impl.Keys Keys leA meth
+binder 788:788 <> x:30
+binder 790:790 <> y:31
+R807:807 Quorph.Impl.Keys <> y:31 var
+R805:805 Quorph.Impl.Keys <> x:30 var
+R820:822 Coq.Init.Datatypes <> inl constr
+R828:830 Coq.Init.Datatypes <> inl constr
+R838:840 Quorph.Impl.Keys Keys leA meth
+R854:856 Coq.Init.Datatypes <> inl constr
+R862:864 Coq.Init.Datatypes <> inr constr
+R872:875 Coq.Init.Logic <> True ind
+R883:885 Coq.Init.Datatypes <> inr constr
+R891:893 Coq.Init.Datatypes <> inr constr
+R901:903 Quorph.Impl.Keys Keys leA meth
+R917:919 Coq.Init.Datatypes <> inr constr
+R925:927 Coq.Init.Datatypes <> inl constr
+R935:939 Coq.Init.Logic <> False ind
+R1065:1068 Quorph.Impl.Keys Keys <> mod
