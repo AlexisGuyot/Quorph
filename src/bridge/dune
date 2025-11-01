@@ -1,5 +1,5 @@
 (library
  (name quorph_bridge)
  (wrapped false)
- (modules coq_ast_bridge)
- (libraries quorph_parser quorph_ir))
+ (modules coq_ast_bridge ir_builder)
+ (libraries quorph_parser quorph_ir quorph_common))

@@ -1,3 +1,6 @@
+module S = Stdlib.String
+module L = Stdlib.List
+
 type ident = string
 
 type expr =
@@ -26,8 +29,8 @@ type stage =
 type query = { from_id: ident; from_source: string; stages: stage list }
 
 let escape_string s =
-  let b = Buffer.create (String.length s + 4) in
-  String.iter (fun c ->
+  let b = Buffer.create (S.length s + 4) in
+  S.iter (fun c ->
     match c with
     | '\"' -> Buffer.add_string b "\\\""
     | '\\' -> Buffer.add_string b "\\\\"
@@ -45,15 +48,15 @@ let rec pp_expr = function
   | EBool b -> if b then "true" else "false"
   | EString s -> "\"" ^ escape_string s ^ "\""
   | ERecord fs ->
-      let fields = fs |> List.map (fun (k,v) -> k ^ ": " ^ pp_expr v) |> String.concat ", " in
+      let fields = fs |> L.map (fun (k,v) -> k ^ ": " ^ pp_expr v) |> S.concat ", " in
       "{" ^ fields ^ "}"
   | EBinop (op, a, b) -> pp_expr a ^ " " ^ op ^ " " ^ pp_expr b
   | ECall (fn, args) ->
-      let a = args |> List.map pp_expr |> String.concat ", " in
+      let a = args |> L.map pp_expr |> S.concat ", " in
       fn ^ "(" ^ a ^ ")"
 
 let pp_agg {out; fn; args} =
-  let args_s = args |> List.map pp_expr |> String.concat ", " in
+  let args_s = args |> L.map pp_expr |> S.concat ", " in
   out ^ ": " ^ fn ^ "(" ^ args_s ^ ")"
 
 let pp_stage = function
@@ -61,9 +64,9 @@ let pp_stage = function
   | Join (id, src, on) -> "join " ^ id ^ " in " ^ src ^ " on " ^ pp_expr on
   | Select fs -> "select " ^ (pp_expr (ERecord fs))
   | Group_by (k, aggs) ->
-      let a = aggs |> List.map pp_agg |> String.concat ", " in
+      let a = aggs |> L.map pp_agg |> S.concat ", " in
       "group by " ^ pp_expr k ^ " aggregate { " ^ a ^ " }"
-  | Order_by keys -> "order by " ^ (String.concat ", " keys)
+  | Order_by keys -> "order by " ^ (S.concat ", " keys)
   | Limit n -> "limit " ^ string_of_int n
   | Distinct -> "distinct"
   | Union (id, src) -> "union " ^ id ^ " in " ^ src
@@ -71,5 +74,5 @@ let pp_stage = function
 
 let pp (q:query) =
   let header = "from " ^ q.from_id ^ " in " ^ q.from_source in
-  let stages = q.stages |> List.map (fun s -> "| " ^ pp_stage s) |> String.concat "\n" in
+  let stages = q.stages |> L.map (fun s -> "| " ^ pp_stage s) |> S.concat "\n" in
   if stages = "" then header else header ^ "\n" ^ stages

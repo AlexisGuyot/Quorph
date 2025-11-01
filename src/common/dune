@@ -1,0 +1,10 @@
+(library
+ (name quorph_common)
+ (wrapped false)
+ (modules 
+   coq_conversion 
+   string_utils 
+   type_utils 
+   fresh_name 
+   operators)
+ (libraries quorph_ir))

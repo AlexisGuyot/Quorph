@@ -1,5 +1,5 @@
 (library
  (name quorph_parser)
  (wrapped false)
- (modules ast_surface desugar sexp_parser simple_parser)
- (libraries yojson str))
+ (modules ast_surface desugar sexp_parser simple_parser parser_utils)
+ (libraries yojson str quorph_common))
