@@ -1,7 +1,0 @@
-DIGEST 21525e5a501f1bc7be9503d4f0d03348
-FQuorph.Proofs.Functoriality
-R24:29 Coq.Strings.String <> <> lib
-R31:34 Coq.Lists.List <> <> lib
-R44:56 Coq.Lists.List ListNotations <> mod
-mod 92:104 <> Functoriality
-R170:182 Quorph.Proofs.Functoriality Functoriality <> mod
