@@ -1,7 +1,0 @@
-DIGEST ac8bc13ee65af20c6a00afe5a4f3101a
-FQuorph.Extract.Extract
-R24:33 Coq.extraction.Extraction <> <> lib
-R129:133 Quorph.Impl.Types <> <> lib
-R135:138 Quorph.Impl.Term <> <> lib
-R140:145 Quorph.Impl.Typing <> <> lib
-R180:189 Quorph.Algo.AlgoTyping <> <> lib
