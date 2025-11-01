@@ -1,173 +1,313 @@
-(* -------------------------------------------------------------------------- *)
-(* simple_parser.ml — version corrigée (autonome, stdlib qualifiée)           *)
-(* -------------------------------------------------------------------------- *)
-
+(* src/parser/simple_parser.ml - Version refactorisée *)
 open Ast_surface
+open String_utils
+open Parser_utils
 
-(* Qualifie explicitement la stdlib pour éviter tout masquage par d'autres
-   modules nommés "String" / "List" / etc. *)
 module S = Stdlib.String
 module L = Stdlib.List
 
-(* -------------------------------------------------------------------------- *)
-(* Utilitaires locaux (pour éviter dépendances fragiles à Parser_utils)       *)
-(* -------------------------------------------------------------------------- *)
+(* ====================================================================== *)
+(* Expression parsing                                                     *)
+(* ====================================================================== *)
 
-let trim (s : string) : string =
-  let is_space = function ' ' | '\n' | '\r' | '\t' -> true | _ -> false in
-  let n = S.length s in
-  let i0 =
-    let rec f i = if i >= n then n else if is_space (S.get s i) then f (i+1) else i in
-    f 0
+let rec parse_expr str = parse_or_expr str
+
+and parse_or_expr str =
+  match split_rightmost_binary_op ~operator:" or " str with
+  | Some (left, right) -> EBinop ("or", parse_or_expr left, parse_and_expr right)
+  | None -> parse_and_expr str
+
+and parse_and_expr str =
+  match split_rightmost_binary_op ~operator:" and " str with
+  | Some (left, right) -> EBinop ("and", parse_and_expr left, parse_comparison_expr right)
+  | None -> parse_comparison_expr str
+
+and parse_comparison_expr str =
+  let operators = [" = "; " <> "; " <= "; " >= "; " < "; " > "] in
+  let rec try_operators = function
+    | [] -> parse_additive_expr str
+    | op :: rest ->
+        match split_rightmost_binary_op ~operator:op str with
+        | Some (left, right) -> 
+            EBinop (trim op, parse_additive_expr left, parse_additive_expr right)
+        | None -> try_operators rest
   in
-  let i1 =
-    let rec f i = if i < 0 then -1 else if is_space (S.get s i) then f (i-1) else i in
-    f (n-1)
-  in
-  if i1 < i0 then "" else S.sub s i0 (i1 - i0 + 1)
+  try_operators operators
 
-let lowercase (s : string) = S.lowercase_ascii s
+and parse_additive_expr str =
+  match split_rightmost_binary_op ~operator:" + " str with
+  | Some (left, right) -> EBinop ("+", parse_additive_expr left, parse_multiplicative_expr right)
+  | None ->
+      match split_rightmost_binary_op ~operator:" - " str with
+      | Some (left, right) -> EBinop ("-", parse_additive_expr left, parse_multiplicative_expr right)
+      | None -> parse_multiplicative_expr str
 
-(* Découpe case-insensitive au premier match de [needle] et renvoie les deux
-   tronçons de la chaîne ORIGINALE. *)
-let split_on_first ~needle (s : string) : (string * string) option =
-  let lower = lowercase s in
-  let n = S.length needle and m = S.length s in
-  let rec loop i =
-    if i + n > m then None
-    else if S.sub lower i n = needle then
-      Some ( S.sub s 0 i, S.sub s (i + n) (m - i - n) )
-    else loop (i + 1)
-  in
-  loop 0
+and parse_multiplicative_expr str =
+  match split_rightmost_binary_op ~operator:" * " str with
+  | Some (left, right) -> EBinop ("*", parse_multiplicative_expr left, parse_postfix_expr right)
+  | None ->
+      match split_rightmost_binary_op ~operator:" / " str with
+      | Some (left, right) -> EBinop ("/", parse_multiplicative_expr left, parse_postfix_expr right)
+      | None -> parse_postfix_expr str
 
-(* -------------------------------------------------------------------------- *)
-(*  FROM ... [ON ...] [WHERE ...]                                            *)
-(* -------------------------------------------------------------------------- *)
-
-let parse_from_like (remainder_after_from : string)
-  : string * string option * string option =
-  (* 1) WHERE (optionnel) *)
-  let source_part, where_opt =
-    match split_on_first ~needle:" where " remainder_after_from with
-    | Some (src, w) -> (trim src, Some (trim w))
-    | None          -> (trim remainder_after_from, None)
-  in
-  (* 2) ON (optionnel) *)
-  let source, on_opt =
-    match split_on_first ~needle:" on " source_part with
-    | Some (src, onp) -> (trim src, Some (trim onp))
-    | None            -> (source_part, None)
-  in
-  (source, on_opt, where_opt)
-
-(* -------------------------------------------------------------------------- *)
-(*  Bloc mutuellement récursif                                                *)
-(* -------------------------------------------------------------------------- *)
-
-let rec parse_expr (s : string) : expr =
-  let s = trim s in
-  if s = "" then EIdent ""
+and parse_postfix_expr str =
+  let str = trim str in
+  let len = S.length str in
+  
+  (* Parenthesized expression *)
+  if len >= 2 && (S.get str 0) = '(' && (S.get str (len - 1)) = ')' then
+    parse_expr (S.sub str 1 (len - 2) |> trim)
+  
+  (* Record literal *)
+  else if len >= 2 && (S.get str 0) = '{' && (S.get str (len - 1)) = '}' then
+    parse_record_literal str
+  
+  (* Function call *)
   else
-    match try_parse_filter_dsl s with
-    | Some e -> e
-    | None ->
-      begin match parse_select_like s with
-      | Some e -> e
-      | None ->
-        begin match parse_call_like s with
-        | Some e -> e
-        | None -> EIdent s
-        end
-      end
+    match S.index_opt str '(' with
+    | Some paren_pos when (S.get str (len - 1)) = ')' ->
+        let fn_name = S.sub str 0 paren_pos |> trim in
+        let args_str = S.sub str (paren_pos + 1) (len - paren_pos - 2) |> trim in
+        parse_function_call fn_name args_str
+    | _ ->
+        (* Field access chain or atom *)
+        let parts = split_field_access_chain str in
+        match parts with
+        | [] -> fail "Empty expression"
+        | [single] -> parse_atom single
+        | first :: rest ->
+            let base = parse_atom first in
+            L.fold_left (fun acc field -> EField (acc, field)) base rest
 
-and try_parse_filter_dsl (payload : string) : expr option =
-  (* Forme:  "x in xs where <predicate>" *)
-  match split_on_first ~needle:" where " payload with
+and parse_atom str =
+  let str = trim str in
+  let len = S.length str in
+  
+  (* String literal *)
+  if len >= 2 && (S.get str 0) = '"' && (S.get str (len - 1)) = '"' then
+    let content = S.sub str 1 (len - 2) in
+    EString content
+  
+  (* Boolean literal *)
+  else if lowercase str = "true" then EBool true
+  else if lowercase str = "false" then EBool false
+  
+  (* Integer literal *)
+  else if str <> "" && S.for_all (function '0'..'9' -> true | _ -> false) str then
+    EInt (int_of_string str)
+  
+  (* Identifier *)
+  else if is_valid_identifier str then
+    EIdent str
+  
+  else
+    fail ("Cannot parse atom: " ^ str)
+
+and parse_record_literal str =
+  let inside = S.sub str 1 (S.length str - 2) |> trim in
+  if inside = "" then ERecord []
+  else
+    let items = split_by_top_level_comma inside in
+    let parse_field item =
+      match S.split_on_char ':' item with
+      | [key; value] -> (trim key, parse_expr (trim value))
+      | _ -> fail ("Malformed record field: " ^ item)
+    in
+    ERecord (L.map parse_field items)
+
+and parse_function_call fn_name args_str =
+  (* Special handling for filter DSL *)
+  if lowercase fn_name = "filter" then
+    match try_parse_filter_dsl args_str with
+    | Some expr -> expr
+    | None -> ECall (fn_name, [EIdent args_str])
+  else
+    if args_str = "" then ECall (fn_name, [])
+    else if S.contains args_str ',' then
+      let arg_parts = split_by_top_level_comma args_str in
+      let parsed_args = L.map parse_expr arg_parts in
+      ECall (fn_name, parsed_args)
+    else
+      ECall (fn_name, [parse_expr args_str])
+
+and try_parse_filter_dsl payload =
+  let lower_payload = lowercase payload in
+  match try_split_at ~pattern:" where " lower_payload with
   | None -> None
-  | Some (before_where, after_where) ->
-      let before_where = trim before_where in
-      let after_where  = trim after_where in
-      (* Regex OCaml: les backslashes doivent être doublés. *)
-      let re = Str.regexp "\\([A-Za-z_][A-Za-z0-9_]*\\)[ \\t]+in[ \\t]+\\([A-Za-z_][A-Za-z0-9_]*\\)" in
-      if Str.string_match re before_where 0 then
-        let param      = Str.matched_group 1 before_where in
+  | Some (before_where_pos, _) ->
+      (* before_where_pos est maintenant un int *)
+      let before_where = S.sub payload 0 before_where_pos |> trim in
+      let where_keyword_len = S.length " where " in
+      let after_where = 
+        S.sub payload (before_where_pos + where_keyword_len)
+          (S.length payload - before_where_pos - where_keyword_len)
+        |> trim
+      in
+      
+      (* Parse "param in collection" pattern *)
+      let pattern = Str.regexp {|\([A-Za-z_][A-Za-z0-9_]*\)[ \t]+in[ \t]+\([A-Za-z_][A-Za-z0-9_]*\)|} in
+      if Str.string_match pattern before_where 0 then
+        let param = Str.matched_group 1 before_where in
         let collection = Str.matched_group 2 before_where in
-        let predicate  = parse_expr after_where in
+        let predicate = parse_expr after_where in
         Some (ECall ("filter", [EIdent param; EIdent collection; predicate]))
       else
         None
 
-and parse_call_like (s : string) : expr option =
-  match split_on_first ~needle:"(" s with
-  | Some (fname, rest) when S.length rest > 0 && (S.get rest (S.length rest - 1)) = ')' ->
-      let args_s = S.sub rest 0 (S.length rest - 1) in
-      Some (parse_simple_call (trim fname) args_s)
-  | _ -> None
+(* ====================================================================== *)
+(* Stage parsing                                                          *)
+(* ====================================================================== *)
 
-and parse_select_like (s : string) : expr option =
-  let lower = lowercase s in
-  if S.length lower >= 7 && S.sub lower 0 7 = "select " then
-    let after = S.sub s 7 (S.length s - 7) in
-    parse_select_from after
-  else None
+let parse_where_stage line =
+  let after_prefix = expect_prefix ~prefix:"where " line in
+  Where (parse_expr after_prefix)
 
-and parse_simple_call (name : string) (args_s : string) : expr =
-  (* parse basique d'appel f(a,b,c) en séparant par virgules non emboîtées. *)
-  let rec split_args s i depth acc start =
-    if i = S.length s then
-      let last = S.sub s start (i - start) |> trim in
-      L.rev (if last = "" then acc else last :: acc)
-    else
-      match (S.get s i) with
-      | '(' | '[' | '{' -> split_args s (i+1) (depth+1) acc start
-      | ')' | ']' | '}' -> split_args s (i+1) (depth-1) acc start
-      | ',' when depth = 0 ->
-          let piece = S.sub s start (i - start) |> trim in
-          let acc = if piece = "" then acc else piece :: acc in
-          split_args s (i+1) depth acc (i+1)
-      | _ -> split_args s (i+1) depth acc start
+let parse_join_stage line =
+  let after_prefix = expect_prefix ~prefix:"join " line in
+  match S.split_on_char ' ' after_prefix |> L.filter ((<>) "") with
+  | alias :: "in" :: rest ->
+      let remainder = S.concat " " rest |> trim in
+      let lower_remainder = lowercase remainder in
+      (match try_split_at ~pattern:" on " lower_remainder with
+       | None -> fail "join: missing 'on' clause"
+       | Some (source_end_pos, _) ->
+           let source = S.sub remainder 0 source_end_pos |> trim in
+           let on_keyword_len = S.length " on " in
+           let on_expr_str = 
+             S.sub remainder (source_end_pos + on_keyword_len)
+               (S.length remainder - source_end_pos - on_keyword_len)
+             |> trim
+           in
+           Join (alias, source, parse_expr on_expr_str))
+  | _ -> fail "join: expected 'join <id> in <source> on <expr>'"
+
+let parse_group_by_stage line =
+  let after_prefix = expect_prefix ~prefix:"group by " line in
+  let lower_line = lowercase after_prefix in
+  match try_split_at ~pattern:" aggregate " lower_line with
+  | None -> fail "group by: missing 'aggregate' clause"
+  | Some (key_end_pos, _) ->
+      let key_str = S.sub after_prefix 0 key_end_pos |> trim in
+      let agg_keyword_len = S.length " aggregate " in
+      let agg_str = 
+        S.sub after_prefix (key_end_pos + agg_keyword_len)
+          (S.length after_prefix - key_end_pos - agg_keyword_len)
+        |> trim
+      in
+      
+      let len = S.length agg_str in
+      if len >= 2 && (S.get agg_str 0) = '{' && (S.get agg_str (len - 1)) = '}' then
+        let inside = S.sub agg_str 1 (len - 2) |> trim in
+        let items = if inside = "" then [] else split_by_top_level_comma inside in
+        
+        let parse_aggregate item =
+          match S.split_on_char ':' item with
+          | [output; fn_call] ->
+              let output = trim output in
+              let fn_call = trim fn_call in
+              (match S.index_opt fn_call '(' with
+               | None -> fail "aggregate: expected function(args)"
+               | Some paren_pos ->
+                   let fn = S.sub fn_call 0 paren_pos |> trim in
+                   let args_str = 
+                     S.sub fn_call (paren_pos + 1) 
+                       (S.length fn_call - paren_pos - 2) 
+                     |> trim
+                   in
+                   let args =
+                     if args_str = "" then []
+                     else if S.contains args_str ',' then
+                       split_by_top_level_comma args_str |> L.map parse_expr
+                     else
+                       [parse_expr args_str]
+                   in
+                   { out = output; fn; args })
+          | _ -> fail ("aggregate: malformed item: " ^ item)
+        in
+        
+        Group_by (parse_expr key_str, L.map parse_aggregate items)
+      else
+        fail "aggregate: expected braces { ... }"
+
+let parse_select_stage line =
+  let after_prefix = expect_prefix ~prefix:"select " line in
+  match parse_expr after_prefix with
+  | ERecord fields -> Select fields
+  | _ -> fail "select: expected record literal"
+
+let parse_order_by_stage line =
+  let after_prefix = expect_prefix ~prefix:"order by " line in
+  let keys = split_by_top_level_comma after_prefix in
+  Order_by keys
+
+let parse_limit_stage line =
+  let after_prefix = expect_prefix ~prefix:"limit " line in
+  (* Robust parsing: extract leading integer *)
+  let len = S.length after_prefix in
+  let start = ref 0 in
+  while !start < len && (S.get after_prefix !start) = ' ' do incr start done;
+  let end_pos = ref !start in
+  while !end_pos < len && (S.get after_prefix !end_pos) >= '0' && (S.get after_prefix !end_pos) <= '9' do
+    incr end_pos
+  done;
+  if !end_pos = !start then fail "limit: not an integer"
+  else
+    let num_str = S.sub after_prefix !start (!end_pos - !start) in
+    Limit (int_of_string num_str)
+
+let parse_stage line =
+  let line = trim line in
+  let line = if starts_with ~prefix:"| " line then
+    S.sub line 2 (S.length line - 2) |> trim
+  else
+    line
   in
-  let inside = trim args_s in
-  let parts = if inside = "" then [] else split_args inside 0 0 [] 0 in
-  let args = L.map parse_expr parts in
-  ECall (name, args)
+  
+  if lowercase line = "distinct" then Distinct
+  else if starts_with ~prefix:"where " line then parse_where_stage line
+  else if starts_with ~prefix:"join " line then parse_join_stage line
+  else if starts_with ~prefix:"group by " line then parse_group_by_stage line
+  else if starts_with ~prefix:"select " line then parse_select_stage line
+  else if starts_with ~prefix:"order by " line then parse_order_by_stage line
+  else if starts_with ~prefix:"limit " line then parse_limit_stage line
+  else fail ("Unsupported stage: " ^ line)
 
-and parse_select_from (payload_after_select : string) : expr option =
-  (* Formes attendues (adaptez selon votre AST):
-     - "<what> from <source>"                      -> ECall("select_from", [...])
-     - "<what> from <source> where <cond>"         -> ECall("select_from_where", [...])
-     - "<what> from <source> on <cond> where <c2>" -> ECall("select_from_on_where", [...]) *)
-  match split_on_first ~needle:" from " payload_after_select with
-  | None -> None
-  | Some (what, remainder) ->
-      let what = trim what in
-      let remainder = trim remainder in
-      let (source, on_opt, where_opt) = parse_from_like remainder in
-      let what_e   = parse_expr what in
-      let source_e = parse_expr source in
-      let on_e_opt = Option.map parse_expr on_opt in
-      let where_e_opt = Option.map parse_expr where_opt in
-      begin match (on_e_opt, where_e_opt) with
-      | (None, None)       -> Some (ECall ("select_from", [what_e; source_e]))
-      | (None, Some w)     -> Some (ECall ("select_from_where", [what_e; source_e; w]))
-      | (Some o, None)     -> Some (ECall ("select_from_on", [what_e; source_e; o]))
-      | (Some o, Some w)   -> Some (ECall ("select_from_on_where", [what_e; source_e; o; w]))
-      end
+(* ====================================================================== *)
+(* Query parsing                                                          *)
+(* ====================================================================== *)
 
+let parse_header line =
+  let after_prefix = expect_prefix ~prefix:"from " line in
+  match S.split_on_char ' ' after_prefix |> L.filter ((<>) "") with
+  | alias :: "in" :: rest ->
+      let source = S.concat " " rest |> trim in
+      if alias = "" || source = "" then fail "Malformed from clause";
+      (alias, source)
+  | _ -> fail "Expected: from <id> in <source>"
 
-(* --- API attendue par typing_driver : parse : string -> Ast_surface.query --- *)
-
-(* 1) parse l'expression *)
-let parse_expr_public (source : string) : Ast_surface.expr =
-  parse_expr source
-
-(* 2) l’envelopper en query *)
-let parse (source : string) : Ast_surface.query =
-  Ast_surface.QExpr (parse_expr_public source)
-(* Si le constructeur n'est pas QExpr, remplace-le par le tien (ex: QSingle, QQuery, etc.) *)
-
-
-(* -------------------------------------------------------------------------- *)
-(* Fin du fichier                                                            *)
-(* -------------------------------------------------------------------------- *)
+let parse text =
+  let lines = split_lines text in
+  match lines with
+  | [] -> fail "Empty program"
+  | header :: stage_lines ->
+      let alias, source_full = parse_header header in
+      
+      (* Handle inline stages after source *)
+      let source, inline_stages =
+        let pieces = S.split_on_char '|' source_full |> L.map trim in
+        match pieces with
+        | [] -> (trim source_full, [])
+        | source_piece :: stage_pieces ->
+            let clean_source = if source_piece = "" then trim source_full else source_piece in
+            let stage_lines =
+              stage_pieces
+              |> L.filter ((<>) "")
+              |> L.map (fun s -> "| " ^ s)
+            in
+            (clean_source, stage_lines)
+      in
+      
+      let all_stage_lines = inline_stages @ stage_lines in
+      let stages = L.map parse_stage all_stage_lines in
+      
+      { from_id = alias; from_source = source; stages }

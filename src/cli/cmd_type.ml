@@ -1,3 +1,6 @@
+module S = Stdlib.String
+module L = Stdlib.List
+
 let run file =
   let ic = open_in file in
   let len = in_channel_length ic in

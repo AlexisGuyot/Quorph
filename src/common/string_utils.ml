@@ -42,15 +42,14 @@ let split_lines text =
   |> L.map trim
   |> L.filter (fun s -> s <> "")
 
+(* Trouve la position du pattern et retourne (position, reste_après_pattern) *)
 let try_split_at ~pattern str =
   let pattern_len = S.length pattern in
   let str_len = S.length str in
   let rec find_pattern i =
     if i + pattern_len > str_len then None
     else if S.sub str i pattern_len = pattern then
-      let left = S.sub str 0 i |> trim in
-      let right = S.sub str (i + pattern_len) (str_len - i - pattern_len) |> trim in
-      Some (left, right)
+      Some (i, S.sub str (i + pattern_len) (str_len - i - pattern_len))
     else
       find_pattern (i + 1)
   in

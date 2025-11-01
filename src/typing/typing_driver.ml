@@ -10,6 +10,7 @@ module AT = AlgoTyping.AlgoTyping
 module Bridge = Coq_ast_bridge
 
 module S = Stdlib.String
+module L = Stdlib.List
 
 (* ====================================================================== *)
 (* Prelude: Built-in operators and their types                           *)
@@ -165,7 +166,7 @@ let typecheck_text source =
     let query = Simple_parser.parse source in
     typecheck_query query
   with
-  | Simple_parser.Parse_error msg -> Error ("Parse error: " ^ msg)
+  | Parser_utils.Parse_error msg -> Error ("Parse error: " ^ msg)
   | Failure msg -> Error msg
   | exn -> Error (Printexc.to_string exn)
 
@@ -181,9 +182,9 @@ let type_of_text source =
         
         match AT.typecheck catalog_ir env_ir ir_expr with
         | AT.Ok result_ty -> Ok (pretty_print_type result_ty)
-        | AT.Err error_msg -> Error (ocaml_string_of_coq error_msg)
+        | AT.Err error_msg -> Error (string_of_coq error_msg)
   with
-  | Simple_parser.Parse_error msg -> Error ("Parse error: " ^ msg)
+  | Parser_utils.Parse_error msg -> Error ("Parse error: " ^ msg)
   | Failure msg -> Error msg
   | exn -> Error (Printexc.to_string exn)
 

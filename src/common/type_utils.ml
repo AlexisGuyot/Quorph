@@ -3,6 +3,7 @@
 module Ty = Types.Types
 module D = Datatypes
 module S = Stdlib.String
+module L = Stdlib.List
 
 (* ====================================================================== *)
 (* Type construction helpers                                              *)

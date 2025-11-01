@@ -94,16 +94,3 @@ let split_field_access_chain str =
         split_at_dot (before :: acc) after
   in
   split_at_dot [] (trim str)
-
-let split_on_first ~needle (s : string) : (string * string) option =
-  let lower = S.lowercase_ascii s in
-  let n = S.length needle
-  and m = S.length s in
-  let rec loop i =
-    if i + n > m then None
-    else if S.sub lower i n = needle then
-      Some ( S.sub s 0 i
-           , S.sub s (i + n) (m - i - n) )
-    else loop (i + 1)
-  in
-  loop 0
